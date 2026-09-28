@@ -1,0 +1,353 @@
+/* ==========================================================================
+   LAYOUT & GRID SYSTEM
+   Institutional Responsive Container & 12-Column Grid
+   ========================================================================== */
+
+/* Containers */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding-mobile);
+  padding-right: var(--container-padding-mobile);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: var(--container-padding-tablet);
+    padding-right: var(--container-padding-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: var(--container-padding-desktop);
+    padding-right: var(--container-padding-desktop);
+  }
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: var(--container-narrow-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding-mobile);
+  padding-right: var(--container-padding-mobile);
+}
+
+@media (min-width: 768px) {
+  .container-narrow {
+    padding-left: var(--container-padding-tablet);
+    padding-right: var(--container-padding-tablet);
+  }
+}
+
+/* Sections */
+.section {
+  position: relative;
+  width: 100%;
+}
+
+.section--pad-sm {
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-6);
+}
+
+.section--pad-md {
+  padding-top: var(--space-10);
+  padding-bottom: var(--space-10);
+}
+
+.section--pad-lg {
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
+}
+
+.section--pad-xl {
+  padding-top: var(--space-24);
+  padding-bottom: var(--space-24);
+}
+
+@media (max-width: 767px) {
+  .section--pad-md {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-8);
+  }
+  .section--pad-lg {
+    padding-top: var(--space-10);
+    padding-bottom: var(--space-10);
+  }
+  .section--pad-xl {
+    padding-top: var(--space-12);
+    padding-bottom: var(--space-12);
+  }
+}
+
+/* Section Backgrounds - Pure Luminous Royal Blue (No dark/black) */
+.section--bg-default {
+  background-color: var(--color-primary-navy);
+  color: var(--color-text-white);
+}
+
+.section--bg-hero {
+  background: var(--gradient-hero);
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+.section--bg-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center bottom;
+  opacity: 0.22;
+  mix-blend-mode: luminosity;
+  pointer-events: none;
+}
+
+.section--bg-hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 15%;
+  right: 15%;
+  height: 450px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.3) 0%, rgba(0, 229, 153, 0.2) 40%, transparent 75%);
+  pointer-events: none;
+  filter: blur(80px);
+}
+
+.section--bg-navy {
+  background: linear-gradient(180deg, #1554B8 0%, #10449C 100%);
+  color: #FFFFFF;
+  position: relative;
+}
+
+.section--bg-sapphire {
+  background: linear-gradient(180deg, #1656C4 0%, #124AA4 50%, #0E3E92 100%);
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+.section--bg-sapphire::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: 10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.25) 0%, rgba(0, 229, 153, 0.18) 50%, transparent 70%);
+  pointer-events: none;
+  filter: blur(80px);
+}
+
+.section--bg-midnight {
+  background: linear-gradient(180deg, #11469E 0%, #0D3B8B 100%);
+  color: #FFFFFF;
+  position: relative;
+}
+
+.section--bg-white {
+  background-color: var(--color-surface-white);
+  color: var(--color-text-dark);
+}
+
+.section--bg-light {
+  background-color: #F8FAFC;
+  color: var(--color-text-dark);
+}
+
+.section--bg-subtle {
+  background-color: var(--color-primary-blue-soft);
+  color: var(--color-text-dark);
+}
+
+.section--bg-dark {
+  background-color: var(--color-primary-navy);
+  color: var(--color-text-white);
+}
+
+/* Headings inside dark sections */
+.section--bg-hero h1,
+.section--bg-hero h2,
+.section--bg-hero h3,
+.section--bg-hero h4,
+.section--bg-navy h1,
+.section--bg-navy h2,
+.section--bg-navy h3,
+.section--bg-navy h4,
+.section--bg-sapphire h1,
+.section--bg-sapphire h2,
+.section--bg-sapphire h3,
+.section--bg-sapphire h4,
+.section--bg-midnight h1,
+.section--bg-midnight h2,
+.section--bg-midnight h3,
+.section--bg-midnight h4,
+.section--bg-dark h1,
+.section--bg-dark h2,
+.section--bg-dark h3,
+.section--bg-dark h4 {
+  color: #FFFFFF;
+}
+
+.section--bg-hero p,
+.section--bg-hero .text-lead,
+.section--bg-navy p,
+.section--bg-navy .text-lead,
+.section--bg-sapphire p,
+.section--bg-sapphire .text-lead,
+.section--bg-midnight p,
+.section--bg-midnight .text-lead,
+.section--bg-dark p,
+.section--bg-dark .text-lead {
+  color: var(--color-text-secondary-light);
+}
+
+.section--bg-hero .text-eyebrow,
+.section--bg-navy .text-eyebrow,
+.section--bg-sapphire .text-eyebrow,
+.section--bg-midnight .text-eyebrow,
+.section--bg-dark .text-eyebrow {
+  color: var(--color-accent-green);
+}
+
+.section--bg-hero .divider,
+.section--bg-navy .divider,
+.section--bg-sapphire .divider,
+.section--bg-midnight .divider,
+.section--bg-dark .divider {
+  border-top-color: var(--color-border-dark);
+}
+
+.section--bg-hero p,
+.section--bg-hero .text-lead,
+.section--bg-navy p,
+.section--bg-navy .text-lead,
+.section--bg-dark p,
+.section--bg-dark .text-lead {
+  color: var(--color-text-secondary-light);
+}
+
+.section--bg-hero .text-eyebrow,
+.section--bg-navy .text-eyebrow,
+.section--bg-dark .text-eyebrow {
+  color: var(--color-accent-green);
+}
+
+.section--bg-hero .divider,
+.section--bg-navy .divider,
+.section--bg-dark .divider {
+  border-top-color: var(--color-border-dark);
+}
+
+.section--border-top {
+  border-top: 1px solid var(--color-border-light);
+}
+
+.section--border-bottom {
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.section--bg-hero.section--border-bottom,
+.section--bg-navy.section--border-bottom,
+.section--bg-dark.section--border-bottom,
+.section--bg-default.section--border-bottom {
+  border-bottom-color: var(--color-border-dark);
+}
+
+/* 12-Column Responsive Grid */
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: var(--space-6);
+  row-gap: var(--space-6);
+}
+
+@media (max-width: 1024px) {
+  .grid-12 {
+    column-gap: var(--space-5);
+    row-gap: var(--space-5);
+  }
+}
+
+@media (max-width: 767px) {
+  .grid-12 {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-6);
+  }
+}
+
+/* Column Spans (Desktop >= 1024px) */
+@media (min-width: 1024px) {
+  .col-12 { grid-column: span 12 / span 12; }
+  .col-11 { grid-column: span 11 / span 11; }
+  .col-10 { grid-column: span 10 / span 10; }
+  .col-9  { grid-column: span 9 / span 9; }
+  .col-8  { grid-column: span 8 / span 8; }
+  .col-7  { grid-column: span 7 / span 7; }
+  .col-6  { grid-column: span 6 / span 6; }
+  .col-5  { grid-column: span 5 / span 5; }
+  .col-4  { grid-column: span 4 / span 4; }
+  .col-3  { grid-column: span 3 / span 3; }
+  .col-2  { grid-column: span 2 / span 2; }
+  .col-1  { grid-column: span 1 / span 1; }
+
+  /* Offsets */
+  .col-start-1 { grid-column-start: 1; }
+  .col-start-2 { grid-column-start: 2; }
+  .col-start-3 { grid-column-start: 3; }
+  .col-start-4 { grid-column-start: 4; }
+  .col-start-5 { grid-column-start: 5; }
+  .col-start-6 { grid-column-start: 6; }
+  .col-start-7 { grid-column-start: 7; }
+  .col-start-8 { grid-column-start: 8; }
+}
+
+/* Tablet Spans (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .col-md-12 { grid-column: span 12 / span 12; }
+  .col-md-8  { grid-column: span 8 / span 8; }
+  .col-md-6  { grid-column: span 6 / span 6; }
+  .col-md-4  { grid-column: span 4 / span 4; }
+  .col-md-3  { grid-column: span 3 / span 3; }
+}
+
+/* Editorial Asymmetric & Split Layouts */
+.editorial-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .editorial-split--50-50 {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+  }
+
+  .editorial-split--60-40 {
+    grid-template-columns: 7fr 5fr;
+    gap: var(--space-12);
+  }
+
+  .editorial-split--40-60 {
+    grid-template-columns: 5fr 7fr;
+    gap: var(--space-12);
+  }
+
+  .editorial-split--30-70 {
+    grid-template-columns: 4fr 8fr;
+    gap: var(--space-12);
+  }
+}

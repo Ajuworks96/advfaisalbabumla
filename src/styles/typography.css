@@ -1,0 +1,111 @@
+/* ==========================================================================
+   TYPOGRAPHY RULES & HIERARCHY
+   Strictly Poppins (Headings, Nav, Buttons) & Raleway (Body, Metadata)
+   ========================================================================== */
+
+h1, .text-h1 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw + 1rem, var(--text-5xl));
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+}
+
+h2, .text-h2 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1.625rem, 2.5vw + 0.75rem, var(--text-3xl));
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-3);
+}
+
+h3, .text-h3 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(1.25rem, 1.5vw + 0.75rem, var(--text-2xl));
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+
+h4, .text-h4 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--text-lg);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-normal);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+
+/* Body Copy (Raleway 400) */
+p, .text-body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-text-primary);
+}
+
+p.lead, .text-lead {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: clamp(1.0625rem, 0.5vw + 1rem, var(--text-xl));
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+}
+
+/* Body Emphasis (Raleway 500) */
+strong, b, .text-emphasis {
+  font-family: var(--font-body);
+  font-weight: 500;
+}
+
+/* Navigation (Poppins 500) */
+.text-nav {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* Buttons (Poppins 600) */
+.text-button {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* Small Metadata (Raleway 500) */
+small, .text-metadata {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--text-xs);
+  line-height: var(--leading-snug);
+  color: var(--color-text-secondary);
+}
+
+/* Eyebrow / Kicker Label (Editorial context) */
+.text-eyebrow {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-uppercase);
+  color: var(--color-text-secondary);
+}
+
+/* Subtitle / Office designation */
+.text-subtitle {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-text-secondary);
+}
