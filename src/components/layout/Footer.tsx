@@ -1,9 +1,26 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useCallback } from 'react';
 import { Container } from './Container';
 import { IconLocation, IconPhone, IconMail } from '../icons/Icons';
 
 export const Footer: React.FC = () => {
+  const scrollToSection = useCallback((hash: string) => {
+    const target = document.getElementById(hash);
+    if (target) {
+      const headerOffset = 76;
+      const elementPosition = target.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+
+      if (window.history.pushState) {
+        window.history.pushState(null, '', `#${hash}`);
+      }
+    }
+  }, []);
+
   return (
     <footer className="site-footer" role="contentinfo">
       <Container>
@@ -21,32 +38,80 @@ export const Footer: React.FC = () => {
                 Kerala Legislative Assembly • കേരള നിയമസഭ
               </div>
             </div>
-            <p style={{ fontSize: 'var(--text-xs)', lineHeight: 'var(--leading-relaxed)', color: '#94A3B8', maxWidth: '340px' }}>
+            <p style={{ fontSize: 'var(--text-xs)', lineHeight: 'var(--leading-relaxed)', color: '#CBD5E1', maxWidth: '340px' }}>
               Official digital communication portal and constituency resource hub dedicated to open governance, democratic accountability, and public welfare in Kerala.
             </p>
           </div>
 
-          {/* Column 2: Legislative & Constituency */}
+          {/* Column 2: Legislative & Office */}
           <div className="col-3 col-md-4">
             <h4 className="site-footer__heading">Legislative & Office</h4>
             <ul className="site-footer__list">
               <li>
-                <Link to="/about">About the MLA</Link>
+                <a
+                  href="#about"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('about');
+                  }}
+                >
+                  About the MLA
+                </a>
               </li>
               <li>
-                <Link to="/constituency">Constituency Profile</Link>
+                <a
+                  href="#constituency"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('constituency');
+                  }}
+                >
+                  Constituency Profile
+                </a>
               </li>
               <li>
-                <Link to="/development">Development Projects</Link>
+                <a
+                  href="#development"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('development');
+                  }}
+                >
+                  Development Projects
+                </a>
               </li>
               <li>
-                <Link to="/assembly">Assembly Interventions</Link>
+                <a
+                  href="#assembly"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('assembly');
+                  }}
+                >
+                  Assembly Interventions
+                </a>
               </li>
               <li>
-                <Link to="/updates">Official Statements & Press</Link>
+                <a
+                  href="#updates"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('updates');
+                  }}
+                >
+                  Official Statements & Press
+                </a>
               </li>
               <li>
-                <Link to="/gallery">Archival Photography</Link>
+                <a
+                  href="#gallery"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('gallery');
+                  }}
+                >
+                  Archival Photography
+                </a>
               </li>
             </ul>
           </div>
@@ -56,16 +121,48 @@ export const Footer: React.FC = () => {
             <h4 className="site-footer__heading">Citizen Services</h4>
             <ul className="site-footer__list">
               <li>
-                <Link to="/raise-an-issue">Raise an Issue</Link>
+                <a
+                  href="#citizen-services"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('citizen-services');
+                  }}
+                >
+                  Raise an Issue
+                </a>
               </li>
               <li>
-                <Link to="/citizen-services">Public Assistance</Link>
+                <a
+                  href="#citizen-services"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('citizen-services');
+                  }}
+                >
+                  Public Assistance
+                </a>
               </li>
               <li>
-                <Link to="/events">Constituency Visits</Link>
+                <a
+                  href="#events"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('events');
+                  }}
+                >
+                  Constituency Visits
+                </a>
               </li>
               <li>
-                <Link to="/contact">Office Appointments</Link>
+                <a
+                  href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('contact');
+                  }}
+                >
+                  Office Appointments
+                </a>
               </li>
             </ul>
           </div>
@@ -73,10 +170,10 @@ export const Footer: React.FC = () => {
           {/* Column 4: Constituency Office Contact */}
           <div className="col-3 col-md-4">
             <h4 className="site-footer__heading">Constituency Office</h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)', fontSize: 'var(--text-xs)', color: '#94A3B8' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)', fontSize: 'var(--text-xs)', color: '#CBD5E1' }}>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-2)' }}>
                 <IconLocation size={16} style={{ flexShrink: 0, marginTop: '2px', color: 'var(--color-accent-green)' }} />
-                <span style={{ color: '#CBD5E1' }}>
+                <span style={{ color: '#FFFFFF' }}>
                   Constituency Office, Civil Station Road,<br />
                   Kerala, India
                 </span>
@@ -105,7 +202,15 @@ export const Footer: React.FC = () => {
           <div style={{ display: 'flex', gap: 'var(--space-4)' }}>
             <span>Government of Kerala Context</span>
             <span>•</span>
-            <Link to="/contact">Public Office Hours: 09:30 – 17:30 IST</Link>
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('contact');
+              }}
+            >
+              Public Office Hours: 09:30 – 17:30 IST
+            </a>
           </div>
         </div>
       </Container>

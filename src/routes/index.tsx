@@ -1,36 +1,29 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { Layout } from '../components/layout/Layout';
-
 import { HomePage } from '../pages/HomePage';
-import { AboutPage } from '../pages/AboutPage';
-import { ConstituencyPage } from '../pages/ConstituencyPage';
-import { DevelopmentPage } from '../pages/DevelopmentPage';
-import { UpdatesPage } from '../pages/UpdatesPage';
-import { EventsPage } from '../pages/EventsPage';
-import { GalleryPage } from '../pages/GalleryPage';
-import { AssemblyPage } from '../pages/AssemblyPage';
-import { CitizenServicesPage } from '../pages/CitizenServicesPage';
-import { RaiseAnIssuePage } from '../pages/RaiseAnIssuePage';
-import { ContactPage } from '../pages/ContactPage';
 import { NotFoundPage } from '../pages/NotFoundPage';
 
 export const AppRoutes: React.FC = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
+        {/* Single-Page MLA Public Office Portal */}
         <Route index element={<HomePage />} />
-        <Route path="about" element={<AboutPage />} />
-        <Route path="constituency" element={<ConstituencyPage />} />
-        <Route path="development" element={<DevelopmentPage />} />
-        <Route path="updates" element={<UpdatesPage />} />
-        <Route path="events" element={<EventsPage />} />
-        <Route path="gallery" element={<GalleryPage />} />
-        <Route path="media" element={<GalleryPage />} />
-        <Route path="assembly" element={<AssemblyPage />} />
-        <Route path="citizen-services" element={<CitizenServicesPage />} />
-        <Route path="raise-an-issue" element={<RaiseAnIssuePage />} />
-        <Route path="contact" element={<ContactPage />} />
+
+        {/* Backward-compatible Deep Hash Redirects */}
+        <Route path="about" element={<Navigate to="/#about" replace />} />
+        <Route path="constituency" element={<Navigate to="/#constituency" replace />} />
+        <Route path="development" element={<Navigate to="/#development" replace />} />
+        <Route path="updates" element={<Navigate to="/#updates" replace />} />
+        <Route path="events" element={<Navigate to="/#events" replace />} />
+        <Route path="gallery" element={<Navigate to="/#gallery" replace />} />
+        <Route path="media" element={<Navigate to="/#gallery" replace />} />
+        <Route path="assembly" element={<Navigate to="/#assembly" replace />} />
+        <Route path="citizen-services" element={<Navigate to="/#citizen-services" replace />} />
+        <Route path="raise-an-issue" element={<Navigate to="/#citizen-services" replace />} />
+        <Route path="contact" element={<Navigate to="/#contact" replace />} />
+
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

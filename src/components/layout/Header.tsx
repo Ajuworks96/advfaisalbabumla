@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Link, useLocation } from 'react-router-dom';
 import { Container } from './Container';
 import { IconMenu, IconClose } from '../icons/Icons';
 
@@ -8,59 +7,110 @@ export interface HeaderProps {
 }
 
 /**
- * Desktop Navigation items as strictly specified
+ * Desktop Navigation items as strictly specified for single-page scrolling
  */
 const DESKTOP_NAV_LINKS = [
-  { label: 'About', path: '/about' },
-  { label: 'Constituency', path: '/constituency' },
-  { label: 'Development', path: '/development' },
-  { label: 'Updates', path: '/updates' },
-  { label: 'Events', path: '/events' },
-  { label: 'Media', path: '/media' },
-  { label: 'Contact', path: '/contact' },
+  { label: 'Home', hash: 'home' },
+  { label: 'About', hash: 'about' },
+  { label: 'Constituency', hash: 'constituency' },
+  { label: 'Development', hash: 'development' },
+  { label: 'Updates', hash: 'updates' },
+  { label: 'Events', hash: 'events' },
+  { label: 'Gallery', hash: 'gallery' },
+  { label: 'Assembly', hash: 'assembly' },
+  { label: 'Contact', hash: 'contact' },
 ];
 
 /**
  * Mobile Navigation items as strictly specified
- * (About, Constituency, Development, Updates, Events, Media, Citizen Services, Raise an Issue, Contact)
  */
 const MOBILE_NAV_LINKS = [
-  { label: 'About', path: '/about' },
-  { label: 'Constituency', path: '/constituency' },
-  { label: 'Development', path: '/development' },
-  { label: 'Updates', path: '/updates' },
-  { label: 'Events', path: '/events' },
-  { label: 'Media', path: '/media' },
-  { label: 'Citizen Services', path: '/citizen-services' },
-  { label: 'Raise an Issue', path: '/raise-an-issue' },
-  { label: 'Contact', path: '/contact' },
+  { label: 'Home', hash: 'home' },
+  { label: 'About the MLA', hash: 'about' },
+  { label: 'Constituency', hash: 'constituency' },
+  { label: 'Development Projects', hash: 'development' },
+  { label: 'Latest Updates', hash: 'updates' },
+  { label: 'Events & Sittings', hash: 'events' },
+  { label: 'Gallery & Media', hash: 'gallery' },
+  { label: 'Assembly Record', hash: 'assembly' },
+  { label: 'Citizen Services', hash: 'citizen-services' },
+  { label: 'Contact Office', hash: 'contact' },
 ];
 
 /**
  * Sophisticated Institutional Header & Navigation System
- * Designed for the official public office of Adv. Fysal Babu MLA.
- * Features calm editorial typography, generous spacing, accessible modal navigation,
- * and restrained scroll elevation.
+ * Converted to Anchor-based Single Page Architecture with Smooth Scrolling & Active State
  */
 export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const location = useLocation();
+  const [activeSection, setActiveSection] = useState<string>('home');
 
   const toggleButtonRef = useRef<HTMLButtonElement | null>(null);
   const closeButtonRef = useRef<HTMLButtonElement | null>(null);
   const drawerRef = useRef<HTMLDivElement | null>(null);
   const previousActiveElementRef = useRef<HTMLElement | null>(null);
 
-  // Close mobile drawer on route transition
-  useEffect(() => {
-    setMobileMenuOpen(false);
-  }, [location.pathname]);
+  /**
+   * Smoothly scrolls to section target with header height offset
+   */
+  const scrollToSection = useCallback((hash: string) => {
+    const target = document.getElementById(hash);
+    if (target) {
+      const headerOffset = 76;
+      const elementPosition = target.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-  // Subtle scroll listener for sticky elevation border/shadow
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+
+      if (window.history.pushState) {
+        window.history.pushState(null, '', `#${hash}`);
+      }
+      setActiveSection(hash);
+    }
+  }, []);
+
+  // Subtle scroll listener for sticky elevation and active section detection
   useEffect(() => {
+    const sections = [
+      'home',
+      'about',
+      'constituency',
+      'development',
+      'updates',
+      'events',
+      'gallery',
+      'assembly',
+      'citizen-services',
+      'contact',
+    ];
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 8);
+
+      const headerOffset = 140;
+      let currentSection = 'home';
+
+      for (const sectionId of sections) {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= headerOffset && rect.bottom > headerOffset) {
+            currentSection = sectionId;
+            break;
+          }
+        }
+      }
+
+      // If scrolled near bottom of page, highlight contact
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 80) {
+        currentSection = 'contact';
+      }
+
+      setActiveSection(currentSection);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -70,6 +120,25 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  // Support URL hashes on initial load & popstate
+  useEffect(() => {
+    const checkHashAndScroll = () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash) {
+        setTimeout(() => {
+          scrollToSection(hash);
+        }, 120);
+      }
+    };
+
+    checkHashAndScroll();
+    window.addEventListener('hashchange', checkHashAndScroll);
+
+    return () => {
+      window.removeEventListener('hashchange', checkHashAndScroll);
+    };
+  }, [scrollToSection]);
 
   // Handle viewport resize: automatically close mobile drawer on desktop breakpoint
   useEffect(() => {
@@ -102,7 +171,6 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
 
   const closeMenu = useCallback(() => {
     setMobileMenuOpen(false);
-    // Restore focus to toggle button
     setTimeout(() => {
       toggleButtonRef.current?.focus();
     }, 50);
@@ -122,14 +190,12 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
     if (!mobileMenuOpen) return;
 
     const handleKeyDown = (event: KeyboardEvent) => {
-      // Escape key closes menu
       if (event.key === 'Escape') {
         event.preventDefault();
         closeMenu();
         return;
       }
 
-      // Focus trap within drawer
       if (event.key === 'Tab' && drawerRef.current) {
         const focusableElements = drawerRef.current.querySelectorAll<HTMLElement>(
           'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
@@ -141,13 +207,11 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
         const lastElement = focusableElements[focusableElements.length - 1];
 
         if (event.shiftKey) {
-          // Shift + Tab
           if (document.activeElement === firstElement) {
             event.preventDefault();
             lastElement.focus();
           }
         } else {
-          // Tab
           if (document.activeElement === lastElement) {
             event.preventDefault();
             firstElement.focus();
@@ -160,14 +224,6 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [mobileMenuOpen, closeMenu]);
 
-  // Active route checking helper
-  const isRouteActive = (path: string) => {
-    if (path === '/') {
-      return location.pathname === '/';
-    }
-    return location.pathname.startsWith(path);
-  };
-
   return (
     <header
       className={`site-header ${isScrolled ? 'site-header--scrolled' : ''} ${className}`}
@@ -176,43 +232,55 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
       <Container>
         <div className="header-inner">
           {/* Left: MLA Name & Official Identity */}
-          <Link
-            to="/"
+          <a
+            href="#home"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('home');
+            }}
             className="brand"
             aria-label="Adv. Fysal Babu, Member of Legislative Assembly — Return to Home"
           >
             <span className="brand__name">Adv. Fysal Babu</span>
             <span className="brand__title">Member of Legislative Assembly</span>
-          </Link>
+          </a>
 
           {/* Center / Right: Desktop Navigation */}
           <nav className="nav-desktop" aria-label="Primary Navigation">
             <div className="nav-links-group">
               {DESKTOP_NAV_LINKS.map((link) => {
-                const active = isRouteActive(link.path);
+                const active = activeSection === link.hash;
 
                 return (
-                  <Link
-                    key={link.path}
-                    to={link.path}
+                  <a
+                    key={link.hash}
+                    href={`#${link.hash}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection(link.hash);
+                    }}
                     className={`nav-link ${active ? 'nav-link--active' : ''}`}
                     aria-current={active ? 'page' : undefined}
                   >
                     {link.label}
-                  </Link>
+                  </a>
                 );
               })}
             </div>
 
-            {/* Primary Action */}
+            {/* Primary Action Button (Smooth scroll to Citizen Grievance) */}
             <div className="nav-cta">
-              <Link
-                to="/raise-an-issue"
+              <a
+                href="#citizen-services"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('citizen-services');
+                }}
                 className="btn btn--primary btn--sm"
                 aria-label="Raise an Issue with the MLA Office"
               >
                 Raise an Issue
-              </Link>
+              </a>
             </div>
           </nav>
 
@@ -273,29 +341,49 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                 </button>
               </div>
 
-              {/* Navigation List (Strictly NO decorative icons) */}
+              {/* Navigation List */}
               <nav aria-label="Mobile Navigation Menu">
                 <ul className="mobile-nav-list">
                   {MOBILE_NAV_LINKS.map((link) => {
-                    const active = isRouteActive(link.path);
+                    const active = activeSection === link.hash;
 
                     return (
-                      <li key={link.path} className="mobile-nav-item">
-                        <Link
-                          to={link.path}
+                      <li key={link.hash} className="mobile-nav-item">
+                        <a
+                          href={`#${link.hash}`}
                           className={`mobile-nav-link ${
                             active ? 'mobile-nav-link--active' : ''
                           }`}
                           aria-current={active ? 'page' : undefined}
-                          onClick={closeMenu}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            closeMenu();
+                            scrollToSection(link.hash);
+                          }}
                         >
                           {link.label}
-                        </Link>
+                        </a>
                       </li>
                     );
                   })}
                 </ul>
               </nav>
+
+              {/* Mobile CTA */}
+              <div style={{ padding: 'var(--space-4) var(--space-6)' }}>
+                <a
+                  href="#citizen-services"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    closeMenu();
+                    scrollToSection('citizen-services');
+                  }}
+                  className="btn btn--primary btn--lg"
+                  style={{ width: '100%', justifyContent: 'center' }}
+                >
+                  Raise an Issue
+                </a>
+              </div>
             </div>
 
             {/* Drawer Footer Notice */}

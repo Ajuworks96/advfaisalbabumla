@@ -44,9 +44,11 @@
 }
 
 /* Sections */
-.section {
+.section,
+[id] {
   position: relative;
   width: 100%;
+  scroll-margin-top: 85px;
 }
 
 .section--pad-sm {
