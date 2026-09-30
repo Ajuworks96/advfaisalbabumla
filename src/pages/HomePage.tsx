@@ -46,12 +46,12 @@ export const HomePage: React.FC = () => {
   ];
 
   return (
-    <>
+    <div className="page-canvas-fluid">
       {/* ====================================================================
           1. HERO SECTION (Luminous Royal Blue Gradient Canvas)
-          Visionary, Spacious, Dynamic (Future Calicut 360 aesthetic)
+          Visionary, Spacious, Dynamic with Official Leader HD Portrait
           ==================================================================== */}
-      <Section padding="xl" background="hero" borderBottom>
+      <Section padding="xl" background="hero">
         <Container>
           <div className="editorial-split editorial-split--60-40" style={{ alignItems: 'center', gap: 'var(--space-10)' }}>
             {/* Left Column: Identity, Vision & Primary Actions */}
@@ -68,10 +68,10 @@ export const HomePage: React.FC = () => {
                       boxShadow: '0 0 10px var(--color-accent-green)',
                     }}
                   />
-                  15th Kerala Legislative Assembly
+                  16th Kerala Legislative Assembly
                 </span>
                 <span className="badge-pill badge-pill--yellow">
-                  Constituency Portal
+                  Kozhikode South • കോഴിക്കോട് സൗത്ത്
                 </span>
               </div>
 
@@ -109,7 +109,7 @@ export const HomePage: React.FC = () => {
                   |
                 </span>
                 <span style={{ fontSize: '1.0625rem', color: '#F1F5F9', fontWeight: 500 }}>
-                  കേരള നിയമസഭാ സാമാജികൻ
+                  കോഴിക്കോട് സൗത്ത് നിയോജകമണ്ഡലം
                 </span>
               </div>
 
@@ -147,111 +147,34 @@ export const HomePage: React.FC = () => {
               </div>
             </div>
 
-            {/* Right Column: Prestigious Official MLA Credential & Leadership Card */}
+            {/* Right Column: Prominent HD Official MLA Portrait Showcase */}
             <div>
-              <div
-                style={{
-                  position: 'relative',
-                  padding: 'var(--space-8)',
-                  background: 'rgba(255, 255, 255, 0.12)',
-                  backdropFilter: 'blur(20px)',
-                  WebkitBackdropFilter: 'blur(20px)',
-                  borderRadius: 'var(--radius-lg)',
-                  border: '1px solid rgba(255, 255, 255, 0.28)',
-                  boxShadow: '0 25px 60px rgba(7, 30, 80, 0.35), 0 0 40px rgba(56, 189, 248, 0.2)',
-                  overflow: 'hidden',
-                }}
-              >
-                {/* Background decorative glow */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: '-60px',
-                    right: '-60px',
-                    width: '180px',
-                    height: '180px',
-                    borderRadius: '50%',
-                    background: 'radial-gradient(circle, rgba(0, 229, 153, 0.35) 0%, transparent 70%)',
-                    filter: 'blur(30px)',
-                    pointerEvents: 'none',
-                  }}
-                />
-
-                {/* State Emblem & Legislative Authority Header */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
-                  <div
-                    style={{
-                      width: '48px',
-                      height: '48px',
-                      borderRadius: '50%',
-                      background: 'linear-gradient(135deg, #FDE047 0%, #EAB308 100%)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: '#0F172A',
-                      fontWeight: 800,
-                      fontSize: '1.25rem',
-                      boxShadow: '0 4px 15px rgba(250, 204, 21, 0.35)',
-                    }}
-                  >
-                    ★
+              <div className="hero-leader-showcase">
+                <div className="hero-leader-showcase__halo" />
+                <div className="hero-leader-showcase__frame">
+                  <div className="hero-leader-showcase__image-wrapper">
+                    <img
+                      src="/images/faisal-babu-mla-hd.png"
+                      alt="Adv. Faisal Babu MLA - Member of Kerala Legislative Assembly"
+                      className="hero-leader-showcase__image"
+                      width={360}
+                      height={400}
+                      loading="eager"
+                    />
                   </div>
-                  <div>
-                    <div style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: '0.875rem', color: '#FFFFFF', letterSpacing: '0.04em', textTransform: 'uppercase' }}>
-                      Kerala Legislative Assembly
+                  <div className="hero-leader-showcase__badge">
+                    <div className="hero-leader-showcase__badge-title">
+                      <span style={{ color: '#FACC15', fontSize: '1.15rem' }}>★</span>
+                      <span>Adv. Faisal Babu MLA</span>
                     </div>
-                    <div style={{ fontSize: '0.75rem', color: 'var(--color-accent-green)', fontWeight: 600 }}>
-                      കേരള നിയമസഭ • 15th Assembly
+                    <div className="hero-leader-showcase__badge-sub">
+                      Member of Legislative Assembly • Kozhikode South
+                    </div>
+                    <div className="hero-leader-showcase__badge-kerala">
+                      16th Kerala Legislative Assembly • കേരള നിയമസഭ
                     </div>
                   </div>
                 </div>
-
-                {/* MLA Card Identity */}
-                <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.15)', paddingTop: 'var(--space-5)', marginBottom: 'var(--space-6)' }}>
-                  <div style={{ fontSize: '0.75rem', color: '#CBD5E1', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '4px' }}>
-                    Elected Representative
-                  </div>
-                  <div style={{ fontFamily: 'var(--font-heading)', fontSize: '1.75rem', fontWeight: 800, color: '#FFFFFF', lineHeight: 1.15, marginBottom: 'var(--space-1)' }}>
-                    Adv. Faisal Babu
-                  </div>
-                  <div style={{ fontSize: '0.9375rem', color: 'var(--color-accent-yellow)', fontWeight: 600 }}>
-                    Member of Legislative Assembly (MLA)
-                  </div>
-                </div>
-
-                {/* Official Credentials Grid */}
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
-                  <div style={{ background: 'rgba(255, 255, 255, 0.08)', padding: 'var(--space-3) var(--space-4)', borderRadius: 'var(--radius-sm)', border: '1px solid rgba(255, 255, 255, 0.1)' }}>
-                    <div style={{ fontSize: '0.6875rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Constituency</div>
-                    <div style={{ fontSize: '0.875rem', color: '#FFFFFF', fontWeight: 700, marginTop: '2px' }}>Kerala State</div>
-                  </div>
-                  <div style={{ background: 'rgba(255, 255, 255, 0.08)', padding: 'var(--space-3) var(--space-4)', borderRadius: 'var(--radius-sm)', border: '1px solid rgba(255, 255, 255, 0.1)' }}>
-                    <div style={{ fontSize: '0.6875rem', color: '#94A3B8', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Assembly Term</div>
-                    <div style={{ fontSize: '0.875rem', color: 'var(--color-accent-green)', fontWeight: 700, marginTop: '2px' }}>Active Mandate</div>
-                  </div>
-                </div>
-
-                {/* Direct Action Link */}
-                <Link
-                  to="/about"
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    padding: 'var(--space-3) var(--space-4)',
-                    background: 'rgba(0, 229, 153, 0.15)',
-                    border: '1px solid rgba(0, 229, 153, 0.35)',
-                    borderRadius: 'var(--radius-sm)',
-                    color: '#FFFFFF',
-                    textDecoration: 'none',
-                    fontSize: '0.875rem',
-                    fontWeight: 600,
-                    transition: 'all 0.2s ease',
-                  }}
-                >
-                  <span>View Official Biography & Legislative Record</span>
-                  <IconArrowRight size={16} style={{ color: 'var(--color-accent-green)' }} />
-                </Link>
               </div>
             </div>
           </div>
@@ -302,7 +225,7 @@ export const HomePage: React.FC = () => {
           Inspired by the crisp white document showcase in Future Calicut 360
           Dynamic Asymmetric Layout breaking monotony
           ==================================================================== */}
-      <Section padding="xl" background="sapphire" borderBottom>
+      <Section padding="xl" background="transparent">
         <Container>
           <div className="editorial-split editorial-split--40-60" style={{ alignItems: 'center', gap: 'var(--space-12)' }}>
             {/* Left: Printed Manifesto Document Paper (High-contrast pure white) */}
@@ -311,7 +234,7 @@ export const HomePage: React.FC = () => {
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 'var(--space-4)' }}>
                   <span className="manifesto-doc__tag">OFFICIAL CHARTER</span>
                   <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#0D3E84', letterSpacing: '0.05em' }}>
-                    15th KLA • SECRETARIAT
+                    16th KLA • KOZHIKODE SOUTH
                   </span>
                 </div>
 
@@ -410,7 +333,7 @@ export const HomePage: React.FC = () => {
           3. FIVE SECTORS IN FOCUS (Dynamic Sector Cards)
           Inspired by "Five sectors the conclave takes up in focus"
           ==================================================================== */}
-      <Section padding="xl" background="navy" borderBottom>
+      <Section padding="xl" background="transparent">
         <Container>
           <SectionHeader
             eyebrow="Key Focus Sectors"
@@ -515,7 +438,7 @@ export const HomePage: React.FC = () => {
       {/* ====================================================================
           4. PRIORITY DEVELOPMENT PROJECTS (Real Photographs with Progress)
           ==================================================================== */}
-      <Section padding="xl" background="sapphire" borderBottom>
+      <Section padding="xl" background="transparent">
         <Container>
           <SectionHeader
             eyebrow="Public Works in Progress"
@@ -710,7 +633,7 @@ export const HomePage: React.FC = () => {
           5. DIRECT CITIZEN GRIEVANCE REDRESSAL DESK
           High-Impact Dynamic Digital Portal Showcase
           ==================================================================== */}
-      <Section padding="xl" background="navy" borderBottom>
+      <Section padding="xl" background="transparent">
         <Container>
           <div className="editorial-split editorial-split--50-50" style={{ alignItems: 'center', gap: 'var(--space-10)' }}>
             {/* Left: Transparent 3-Step Protocol */}
@@ -848,7 +771,7 @@ export const HomePage: React.FC = () => {
           6. ASSEMBLY STEWARDSHIP & KEY PANELS
           Kerala Niyamasabha Parliamentary Record (With Real Assembly Photo)
           ==================================================================== */}
-      <Section padding="xl" background="sapphire" borderBottom>
+      <Section padding="xl" background="transparent">
         <Container>
           <div className="editorial-split editorial-split--50-50" style={{ alignItems: 'center', gap: 'var(--space-10)' }}>
             {/* Left: Authentic Assembly Visual Frame */}
@@ -943,7 +866,7 @@ export const HomePage: React.FC = () => {
       {/* ====================================================================
           7. PUBLIC DIARY & CONSTITUENCY SCHEDULE
           ==================================================================== */}
-      <Section padding="xl" background="navy" borderBottom>
+      <Section padding="xl" background="transparent">
         <Container>
           <SectionHeader
             eyebrow="Public Diary"
@@ -1062,7 +985,7 @@ export const HomePage: React.FC = () => {
           8. CITIZEN FAQ DESK (Directly inspired by Future Calicut 360 FAQ)
           Interactive Accordion to break content monotony
           ==================================================================== */}
-      <Section padding="xl" background="sapphire" borderBottom>
+      <Section padding="xl" background="transparent">
         <Container>
           <div className="editorial-split editorial-split--40-60" style={{ alignItems: 'flex-start', gap: 'var(--space-12)' }}>
             <div>
@@ -1152,7 +1075,7 @@ export const HomePage: React.FC = () => {
       {/* ====================================================================
           9. OFFICIAL PHOTO & MEDIA ARCHIVE (Real High-Res Imagery)
           ==================================================================== */}
-      <Section padding="xl" background="navy" borderBottom>
+      <Section padding="xl" background="transparent">
         <Container>
           <SectionHeader
             eyebrow="Visual Documentation"
@@ -1232,7 +1155,7 @@ export const HomePage: React.FC = () => {
       {/* ====================================================================
           10. CONTACT & OFFICE DIRECTORY
           ==================================================================== */}
-      <Section padding="xl" background="midnight">
+      <Section padding="xl" background="transparent">
         <Container>
           <SectionHeader
             eyebrow="Office Directory"
@@ -1397,6 +1320,6 @@ export const HomePage: React.FC = () => {
           </ResponsiveGrid>
         </Container>
       </Section>
-    </>
+    </div>
   );
 };

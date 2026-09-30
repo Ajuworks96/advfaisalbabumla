@@ -1288,3 +1288,113 @@
   color: var(--color-text-secondary-light);
 }
 
+/* ==========================================================================
+   HERO LEADER SHOWCASE (Adv. Faisal Babu MLA HD Portrait Presentation)
+   ========================================================================== */
+.hero-leader-showcase {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.hero-leader-showcase__halo {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.32) 0%, rgba(0, 229, 153, 0.18) 40%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-leader-showcase__frame {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 28px;
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.04) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 30px 80px rgba(4, 20, 56, 0.5), 0 0 50px rgba(56, 189, 248, 0.2);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  overflow: hidden;
+  padding: var(--space-8) var(--space-6) 0 var(--space-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-leader-showcase__image-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.hero-leader-showcase__image {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  max-height: 420px;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.4));
+  transition: transform var(--transition-base);
+}
+
+.hero-leader-showcase:hover .hero-leader-showcase__image {
+  transform: scale(1.03);
+}
+
+.hero-leader-showcase__badge {
+  position: relative;
+  z-index: 2;
+  margin-top: -36px;
+  margin-bottom: var(--space-4);
+  width: 92%;
+  background: rgba(10, 42, 102, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.hero-leader-showcase__badge-title {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.hero-leader-showcase__badge-sub {
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  color: var(--color-accent-yellow);
+  font-weight: 600;
+  margin-top: 3px;
+  letter-spacing: 0.02em;
+}
+
+.hero-leader-showcase__badge-kerala {
+  font-size: 0.75rem;
+  color: var(--color-accent-green);
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+

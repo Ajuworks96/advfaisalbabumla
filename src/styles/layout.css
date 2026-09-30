@@ -84,17 +84,76 @@
   }
 }
 
-/* Section Backgrounds - Pure Luminous Royal Blue (No dark/black) */
+/* Unified Fluid Page Canvas (Continuous uninterrupted royal blue gradient journey) */
+.page-canvas-fluid {
+  background: linear-gradient(
+    180deg,
+    #185EC8 0%,       /* Luminous Cobalt Hero Top */
+    #1555BF 10%,      /* Metrics Strip */
+    #124AA4 22%,      /* People's Charter */
+    #104298 36%,      /* Strategic Focus */
+    #0E3C8A 50%,      /* Development Works */
+    #0C357E 65%,      /* Citizen Grievance */
+    #0A2E70 78%,      /* Kerala Assembly */
+    #082762 88%,      /* Public Diary */
+    #062054 94%,      /* Offices */
+    #041944 100%      /* Footer */
+  );
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.page-canvas-fluid::before {
+  content: '';
+  position: absolute;
+  top: 1400px;
+  right: -100px;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.14) 0%, rgba(0, 229, 153, 0.08) 45%, transparent 70%);
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-canvas-fluid::after {
+  content: '';
+  position: absolute;
+  top: 3200px;
+  left: -150px;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 229, 153, 0.12) 0%, rgba(56, 189, 248, 0.08) 50%, transparent 75%);
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Section Backgrounds - Fully Seamless Fluid Canvas (No harsh breaks) */
+.section--bg-transparent,
+.section--bg-fluid {
+  background: transparent;
+  color: #FFFFFF;
+  position: relative;
+  z-index: 1;
+}
+
 .section--bg-default {
-  background-color: var(--color-primary-navy);
+  background: transparent;
   color: var(--color-text-white);
+  position: relative;
+  z-index: 1;
 }
 
 .section--bg-hero {
-  background: var(--gradient-hero);
+  background: transparent;
   color: #FFFFFF;
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 .section--bg-hero::before {
@@ -107,52 +166,34 @@
   background-image: url('/images/hero-bg.jpg');
   background-size: cover;
   background-position: center bottom;
-  opacity: 0.22;
+  opacity: 0.16;
   mix-blend-mode: luminosity;
   pointer-events: none;
+  z-index: -1;
+  mask-image: linear-gradient(180deg, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
 }
 
 .section--bg-hero::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 15%;
-  right: 15%;
-  height: 450px;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.3) 0%, rgba(0, 229, 153, 0.2) 40%, transparent 75%);
+  top: -50px;
+  right: 5%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.25) 0%, rgba(0, 229, 153, 0.18) 45%, transparent 70%);
   pointer-events: none;
   filter: blur(80px);
+  z-index: -1;
 }
 
-.section--bg-navy {
-  background: linear-gradient(180deg, #1554B8 0%, #10449C 100%);
-  color: #FFFFFF;
-  position: relative;
-}
-
-.section--bg-sapphire {
-  background: linear-gradient(180deg, #1656C4 0%, #124AA4 50%, #0E3E92 100%);
-  color: #FFFFFF;
-  position: relative;
-  overflow: hidden;
-}
-
-.section--bg-sapphire::before {
-  content: '';
-  position: absolute;
-  top: -100px;
-  right: 10%;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.25) 0%, rgba(0, 229, 153, 0.18) 50%, transparent 70%);
-  pointer-events: none;
-  filter: blur(80px);
-}
-
+.section--bg-navy,
+.section--bg-sapphire,
 .section--bg-midnight {
-  background: linear-gradient(180deg, #11469E 0%, #0D3B8B 100%);
+  background: transparent;
   color: #FFFFFF;
   position: relative;
+  z-index: 1;
 }
 
 .section--bg-white {
@@ -175,11 +216,19 @@
   color: var(--color-text-white);
 }
 
-/* Headings inside dark sections */
+/* Headings inside fluid sections */
 .section--bg-hero h1,
 .section--bg-hero h2,
 .section--bg-hero h3,
 .section--bg-hero h4,
+.section--bg-transparent h1,
+.section--bg-transparent h2,
+.section--bg-transparent h3,
+.section--bg-transparent h4,
+.section--bg-fluid h1,
+.section--bg-fluid h2,
+.section--bg-fluid h3,
+.section--bg-fluid h4,
 .section--bg-navy h1,
 .section--bg-navy h2,
 .section--bg-navy h3,
@@ -201,6 +250,10 @@
 
 .section--bg-hero p,
 .section--bg-hero .text-lead,
+.section--bg-transparent p,
+.section--bg-transparent .text-lead,
+.section--bg-fluid p,
+.section--bg-fluid .text-lead,
 .section--bg-navy p,
 .section--bg-navy .text-lead,
 .section--bg-sapphire p,
@@ -213,6 +266,8 @@
 }
 
 .section--bg-hero .text-eyebrow,
+.section--bg-transparent .text-eyebrow,
+.section--bg-fluid .text-eyebrow,
 .section--bg-navy .text-eyebrow,
 .section--bg-sapphire .text-eyebrow,
 .section--bg-midnight .text-eyebrow,

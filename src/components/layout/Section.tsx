@@ -10,7 +10,9 @@ export type SectionBackground =
   | 'hero'
   | 'navy'
   | 'sapphire'
-  | 'midnight';
+  | 'midnight'
+  | 'transparent'
+  | 'fluid';
 
 export interface SectionProps extends React.HTMLAttributes<HTMLElement> {
   children: React.ReactNode;
