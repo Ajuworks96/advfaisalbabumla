@@ -62,19 +62,24 @@ export const HomePage: React.FC = () => {
             {/* Left Column: Sri Fysal Babu MLA Official HD Cutout Portrait */}
             <div className="hero-light-leader">
               <div className="hero-light-leader__halo" />
+              
+              {/* Floating Leadership Credential Chip placed cleanly above portrait */}
+              <div className="hero-light-leader__badge-float">
+                <span className="hero-light-leader__badge-star">★</span>
+                <span>Adv. Fysal Babu MLA</span>
+                <span className="hero-light-leader__badge-sep">•</span>
+                <span className="hero-light-leader__badge-constituency">കോഴിക്കോട് സൗത്ത്</span>
+              </div>
+
               <div className="hero-light-leader__portrait-wrapper">
                 <img
                   src="/images/fysal-babu-mla-hd.png"
                   alt="Adv. Fysal Babu MLA - Member of Legislative Assembly, Kozhikode South"
                   className="hero-light-leader__img"
-                  width={480}
-                  height={540}
+                  width={520}
+                  height={620}
                   loading="eager"
                 />
-              </div>
-              <div className="hero-light-leader__tag">
-                <span className="hero-light-leader__tag-dot" />
-                <span>Adv. Fysal Babu MLA • 16th KLA (കോഴിക്കോട് സൗത്ത്)</span>
               </div>
             </div>
 
@@ -210,8 +215,23 @@ export const HomePage: React.FC = () => {
           </div>
         </Container>
 
-        {/* Smooth bottom transition into the blue page canvas */}
-        <div className="hero-light-section__bottom-fade" />
+        {/* Organic Fluid Gradient Stream ("Ozhukk") into Royal Blue */}
+        <div className="hero-stream-ozhukk" aria-hidden="true">
+          <svg viewBox="0 0 1440 180" fill="none" preserveAspectRatio="none" className="hero-stream-svg">
+            <path
+              d="M0,40 C320,110 500,10 780,70 C1060,130 1220,30 1440,80 L1440,180 L0,180 Z"
+              fill="rgba(24, 94, 200, 0.35)"
+            />
+            <path
+              d="M0,80 C260,150 540,30 840,95 C1140,160 1260,60 1440,100 L1440,180 L0,180 Z"
+              fill="rgba(20, 80, 176, 0.7)"
+            />
+            <path
+              d="M0,120 C360,170 620,70 920,130 C1220,185 1320,105 1440,140 L1440,180 L0,180 Z"
+              fill="#185EC8"
+            />
+          </svg>
+        </div>
       </section>
 
       {/* ====================================================================
