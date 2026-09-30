@@ -48,139 +48,130 @@ export const HomePage: React.FC = () => {
   return (
     <div className="page-canvas-fluid">
       {/* ====================================================================
-          1. HERO SECTION (Luminous Royal Blue Gradient Canvas)
-          Visionary, Spacious, Dynamic with Official Leader HD Portrait
+          1. HERO SECTION (Off-White with Minimal Blue & Calicut South Elements)
+          Left: Sri Faisal Babu MLA Full-Height Portrait (Integrated into Background)
+          Right: Editorial Leadership Typography, Malayalam Lead & Direct CTAs
           ==================================================================== */}
-      <Section padding="xl" background="hero">
+      <section className="hero-light-section">
+        {/* Subtle Calicut South Landmark Watermark & Minimal Blue Ambient Glow */}
+        <div className="hero-light-section__bg-watermark" />
+        <div className="hero-light-section__ambient-glow" />
+
         <Container>
-          <div className="editorial-split editorial-split--60-40" style={{ alignItems: 'center', gap: 'var(--space-10)' }}>
-            {/* Left Column: Identity, Vision & Primary Actions */}
-            <div>
-              {/* Luminous Status Pills */}
-              <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap', marginBottom: 'var(--space-4)' }}>
-                <span className="badge-pill badge-pill--green">
-                  <span
-                    style={{
-                      width: '6px',
-                      height: '6px',
-                      borderRadius: '50%',
-                      backgroundColor: 'var(--color-accent-green)',
-                      boxShadow: '0 0 10px var(--color-accent-green)',
-                    }}
-                  />
+          <div className="hero-light-grid">
+            {/* Left Column: Sri Faisal Babu MLA Official HD Cutout Portrait */}
+            <div className="hero-light-leader">
+              <div className="hero-light-leader__halo" />
+              <div className="hero-light-leader__portrait-wrapper">
+                <img
+                  src="/images/faisal-babu-mla-hd.png"
+                  alt="Adv. Faisal Babu MLA - Member of Legislative Assembly, Kozhikode South"
+                  className="hero-light-leader__img"
+                  width={480}
+                  height={540}
+                  loading="eager"
+                />
+              </div>
+              <div className="hero-light-leader__tag">
+                <span className="hero-light-leader__tag-dot" />
+                <span>Adv. Faisal Babu MLA • 16th KLA (കോഴിക്കോട് സൗത്ത്)</span>
+              </div>
+            </div>
+
+            {/* Right Column: Identity, Editorial Narrative & Action Center */}
+            <div className="hero-light-content">
+              {/* Institutional Eyebrow Pills */}
+              <div className="hero-light-pills">
+                <span className="hero-light-pill hero-light-pill--assembly">
+                  <span className="hero-light-pill__dot" />
                   16th Kerala Legislative Assembly
                 </span>
-                <span className="badge-pill badge-pill--yellow">
+                <span className="hero-light-pill hero-light-pill--constituency">
                   Kozhikode South • കോഴിക്കോട് സൗത്ത്
                 </span>
               </div>
 
-              {/* Main Headline with Highlight Accent */}
-              <h1
-                style={{
-                  fontSize: 'clamp(2.75rem, 5.5vw, 4.25rem)',
-                  lineHeight: '1.08',
-                  color: '#FFFFFF',
-                  marginBottom: 'var(--space-3)',
-                  letterSpacing: '-0.025em',
-                  fontWeight: 800,
-                  textShadow: '0 2px 20px rgba(0, 0, 0, 0.25)',
-                }}
-              >
-                Adv. Faisal Babu <span className="highlight-yellow">MLA</span>
+              {/* Malayalam Poster Lead (Inspired by User's Reference Poster) */}
+              <div className="hero-light-malayalam-lead">
+                ജനനായകൻ • കോഴിക്കോട് സൗത്തിന്റെ ശബ്ദം
+              </div>
+
+              {/* Grand Headline */}
+              <h1 className="hero-light-title">
+                Adv. Faisal Babu <span className="hero-light-title__mla">MLA</span>
               </h1>
 
               {/* Bilingual Subtitle */}
-              <div
-                style={{
-                  fontFamily: 'var(--font-heading)',
-                  fontSize: '1.1875rem',
-                  fontWeight: 600,
-                  color: 'var(--color-accent-green)',
-                  marginBottom: 'var(--space-6)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 'var(--space-3)',
-                  flexWrap: 'wrap',
-                }}
-              >
+              <div className="hero-light-subtitle">
                 <span>Member of the Legislative Assembly</span>
-                <span aria-hidden="true" style={{ color: 'rgba(255, 255, 255, 0.3)' }}>
-                  |
-                </span>
-                <span style={{ fontSize: '1.0625rem', color: '#F1F5F9', fontWeight: 500 }}>
-                  കോഴിക്കോട് സൗത്ത് നിയോജകമണ്ഡലം
-                </span>
+                <span className="hero-light-subtitle__sep">|</span>
+                <span className="hero-light-subtitle__mal">കേരള നിയമസഭാ സാമാജികൻ</span>
               </div>
 
-              {/* Spacious, Inspiring Statement */}
-              <p
-                style={{
-                  color: '#F1F5F9',
-                  fontSize: 'clamp(1.125rem, 1.3vw, 1.25rem)',
-                  lineHeight: '1.75',
-                  marginBottom: 'var(--space-8)',
-                  maxWidth: '640px',
-                  textShadow: '0 1px 4px rgba(0, 0, 0, 0.2)',
-                }}
-              >
-                Shaping a <span className="highlight-yellow">360° Vision</span> for inclusive development,
-                cutting-edge public schools, state-of-the-art healthcare, and accountable democratic governance.
+              {/* Vision Statement */}
+              <p className="hero-light-statement">
+                A proactive <strong>360° Vision</strong> driving modern public healthcare, high-tech government schools,
+                sustainable coastal infrastructure, and transparent democratic governance for every family in Kozhikode South.
               </p>
 
-              {/* Action Buttons */}
-              <div
-                style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  gap: 'var(--space-4)',
-                  alignItems: 'center',
-                }}
-              >
-                <Link to="/raise-an-issue" className="btn btn--primary btn--lg">
+              {/* Primary Action Buttons */}
+              <div className="hero-light-actions">
+                <Link
+                  to="/raise-an-issue"
+                  className="btn btn--primary btn--lg"
+                  style={{
+                    backgroundColor: '#059669',
+                    borderColor: '#059669',
+                    color: '#FFFFFF',
+                    boxShadow: '0 8px 24px rgba(5, 150, 105, 0.3)',
+                  }}
+                >
                   <span>Raise a Citizen Grievance</span>
                   <IconArrowRight size={18} />
                 </Link>
-                <Link to="/development" className="btn btn--secondary btn--lg">
+                <Link
+                  to="/development"
+                  className="btn btn--secondary btn--lg"
+                  style={{
+                    backgroundColor: '#FFFFFF',
+                    color: '#0A2858',
+                    borderColor: '#CBD5E1',
+                    boxShadow: '0 4px 14px rgba(10, 42, 102, 0.08)',
+                  }}
+                >
                   Explore Priority Works
                 </Link>
               </div>
-            </div>
 
-            {/* Right Column: Prominent HD Official MLA Portrait Showcase */}
-            <div>
-              <div className="hero-leader-showcase">
-                <div className="hero-leader-showcase__halo" />
-                <div className="hero-leader-showcase__frame">
-                  <div className="hero-leader-showcase__image-wrapper">
-                    <img
-                      src="/images/faisal-babu-mla-hd.png"
-                      alt="Adv. Faisal Babu MLA - Member of Kerala Legislative Assembly"
-                      className="hero-leader-showcase__image"
-                      width={360}
-                      height={400}
-                      loading="eager"
-                    />
+              {/* Quick Highlights Bar */}
+              <div className="hero-light-highlights">
+                <div className="hero-light-highlight-item">
+                  <span className="hero-light-highlight-icon">🏛️</span>
+                  <div>
+                    <strong>Kozhikode South</strong>
+                    <span>Constituency Office</span>
                   </div>
-                  <div className="hero-leader-showcase__badge">
-                    <div className="hero-leader-showcase__badge-title">
-                      <span style={{ color: '#FACC15', fontSize: '1.15rem' }}>★</span>
-                      <span>Adv. Faisal Babu MLA</span>
-                    </div>
-                    <div className="hero-leader-showcase__badge-sub">
-                      Member of Legislative Assembly • Kozhikode South
-                    </div>
-                    <div className="hero-leader-showcase__badge-kerala">
-                      16th Kerala Legislative Assembly • കേരള നിയമസഭ
-                    </div>
+                </div>
+                <div className="hero-light-highlight-item">
+                  <span className="hero-light-highlight-icon">⚖️</span>
+                  <div>
+                    <strong>Advocate & Legislator</strong>
+                    <span>Legal Advocacy</span>
+                  </div>
+                </div>
+                <div className="hero-light-highlight-item">
+                  <span className="hero-light-highlight-icon">🤝</span>
+                  <div>
+                    <strong>Janamaithri</strong>
+                    <span>Citizen Adalat</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Metrics & Impact Bar (Directly integrated Future Calicut 360 stat strip) */}
-          <div className="metrics-strip">
+          {/* Metrics & Impact Bar (Refined Light Aesthetic bridging smoothly into the Blue Canvas) */}
+          <div className="metrics-strip metrics-strip--light">
             <div className="metric-stat">
               <div className="metric-stat__num">
                 ₹240 <span>Cr+</span>
@@ -218,7 +209,10 @@ export const HomePage: React.FC = () => {
             </div>
           </div>
         </Container>
-      </Section>
+
+        {/* Smooth bottom transition into the blue page canvas */}
+        <div className="hero-light-section__bottom-fade" />
+      </section>
 
       {/* ====================================================================
           2. VISION & STEWARDSHIP (MANIFESTO CHARTER SHOWCASE)

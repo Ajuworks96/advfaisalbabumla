@@ -413,23 +413,24 @@
   margin-bottom: var(--space-6);
 }
 
-/* Header Masthead & Navigation (Luminous Translucent Royal Blue) */
+/* Header Masthead & Navigation (Lightweight, Crisp Frosted White / Off-White Glass) */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 100;
   width: 100%;
-  background-color: rgba(18, 70, 160, 0.88);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 4px 20px rgba(10, 42, 102, 0.05);
   transition: box-shadow var(--transition-fast), border-color var(--transition-fast), background-color var(--transition-fast);
 }
 
 .site-header--scrolled {
-  background-color: rgba(15, 60, 140, 0.95);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-  border-bottom-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 8px 30px rgba(10, 42, 102, 0.1);
+  border-bottom-color: rgba(203, 213, 225, 0.8);
 }
 
 .header-inner {
@@ -463,15 +464,15 @@
   font-weight: 700;
   font-size: 1.25rem;
   letter-spacing: var(--tracking-tight);
-  color: #FFFFFF;
+  color: #0A2858;
   line-height: 1.15;
 }
 
 .brand__title {
   font-family: var(--font-body);
-  font-weight: 500;
+  font-weight: 600;
   font-size: var(--text-xs);
-  color: var(--color-accent-green);
+  color: #059669;
   letter-spacing: 0.03em;
   margin-top: 2px;
 }
@@ -512,7 +513,7 @@
   font-family: var(--font-heading);
   font-weight: 500;
   font-size: var(--text-sm);
-  color: var(--color-text-secondary-light);
+  color: #334155;
   text-decoration: none;
   padding: var(--space-2) 0;
   position: relative;
@@ -522,12 +523,12 @@
 }
 
 .nav-link:hover {
-  color: var(--color-accent-green);
+  color: #0D3E8E;
 }
 
 .nav-link--active {
-  color: #FFFFFF;
-  font-weight: 600;
+  color: #0A2858;
+  font-weight: 700;
 }
 
 .nav-link--active::after {
@@ -537,8 +538,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background-color: var(--color-accent-green);
-  box-shadow: 0 0 8px var(--color-accent-green);
+  background-color: #0D3E8E;
 }
 
 .nav-cta {
@@ -554,23 +554,23 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--color-border-dark);
+  background: #F1F5F9;
+  border: 1px solid #CBD5E1;
   border-radius: var(--radius-sm);
   cursor: pointer;
-  color: #FFFFFF;
+  color: #0A2858;
   padding: 0;
   transition: background-color var(--transition-fast), border-color var(--transition-fast);
   outline-offset: 2px;
 }
 
 .mobile-toggle:hover {
-  background-color: rgba(255, 255, 255, 0.12);
-  border-color: var(--color-accent-green);
+  background-color: #E2E8F0;
+  border-color: #0D3E8E;
 }
 
 .mobile-toggle:focus-visible {
-  outline: 2px solid var(--color-accent-green);
+  outline: 2px solid #0D3E8E;
 }
 
 @media (min-width: 1024px) {
@@ -838,6 +838,26 @@
   margin-top: 8px;
   line-height: 1.45;
   font-weight: 500;
+}
+
+/* Light variant for off-white hero section */
+.metrics-strip--light {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 15px 40px rgba(10, 42, 102, 0.08);
+}
+
+.metrics-strip--light .metric-stat__num {
+  color: #0A2858;
+  text-shadow: none;
+}
+
+.metrics-strip--light .metric-stat__num span {
+  color: #059669;
+}
+
+.metrics-strip--light .metric-stat__label {
+  color: #475569;
 }
 
 /* Sector Focus Cards */
@@ -1396,5 +1416,313 @@
   font-weight: 600;
   margin-top: 2px;
 }
+
+/* ==========================================================================
+   OFF-WHITE HERO SECTION WITH MINIMAL BLUE & CALICUT SOUTH ELEMENTS
+   Inspired by prestigious leadership campaign portraits (Shafi Parambil style)
+   ========================================================================== */
+.hero-light-section {
+  position: relative;
+  background: linear-gradient(155deg, #FFFFFF 0%, #F8FAFD 40%, #EFF5FD 80%, #E2EDFC 100%);
+  color: #0F172A;
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-12);
+  overflow: hidden;
+}
+
+.hero-light-section__bg-watermark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center bottom;
+  opacity: 0.055;
+  filter: grayscale(100%) contrast(120%);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.hero-light-section__ambient-glow {
+  position: absolute;
+  top: -100px;
+  right: 5%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.16) 0%, rgba(13, 62, 142, 0.05) 50%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.hero-light-grid {
+  display: grid;
+  grid-template-columns: 46% 54%;
+  align-items: flex-end;
+  gap: var(--space-8);
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 1024px) {
+  .hero-light-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    align-items: center;
+  }
+}
+
+/* Left: Leader Portrait (Full organic cutout presentation) */
+.hero-light-leader {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.hero-light-leader__halo {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(250, 204, 21, 0.18) 0%, rgba(56, 189, 248, 0.2) 40%, rgba(13, 62, 142, 0.06) 60%, transparent 75%);
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-light-leader__portrait-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.hero-light-leader__img {
+  width: 100%;
+  height: auto;
+  max-height: 540px;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 35px rgba(10, 40, 90, 0.2));
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 10%, black 100%);
+  mask-image: linear-gradient(to top, transparent 0%, black 10%, black 100%);
+  transition: transform var(--transition-base);
+}
+
+.hero-light-leader:hover .hero-light-leader__img {
+  transform: scale(1.02);
+}
+
+.hero-light-leader__tag {
+  position: relative;
+  z-index: 2;
+  margin-top: -18px;
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  border-radius: var(--radius-full);
+  padding: 8px 18px;
+  box-shadow: 0 10px 25px rgba(10, 42, 102, 0.12);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #0A2858;
+}
+
+.hero-light-leader__tag-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #059669;
+  box-shadow: 0 0 8px #059669;
+}
+
+/* Right: Content */
+.hero-light-content {
+  position: relative;
+  z-index: 1;
+  padding-bottom: var(--space-4);
+}
+
+.hero-light-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.hero-light-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hero-light-pill--assembly {
+  background-color: #EBF3FE;
+  color: #0D3E8E;
+  border: 1px solid #BFDBFE;
+}
+
+.hero-light-pill__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #059669;
+  box-shadow: 0 0 6px #059669;
+}
+
+.hero-light-pill--constituency {
+  background-color: #FEF9C3;
+  color: #854D0E;
+  border: 1px solid #FDE047;
+}
+
+.hero-light-malayalam-lead {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: #059669;
+  margin-bottom: var(--space-2);
+  letter-spacing: 0.02em;
+}
+
+.hero-light-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.75rem, 4.8vw, 4.25rem);
+  line-height: 1.05;
+  color: #0A2858;
+  font-weight: 800;
+  margin-bottom: var(--space-3);
+  letter-spacing: -0.025em;
+}
+
+.hero-light-title__mla {
+  color: #1350B4;
+  position: relative;
+  display: inline-block;
+}
+
+.hero-light-title__mla::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #FACC15;
+  border-radius: 2px;
+}
+
+.hero-light-subtitle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1E293B;
+  margin-bottom: var(--space-5);
+}
+
+.hero-light-subtitle__sep {
+  color: #94A3B8;
+}
+
+.hero-light-subtitle__mal {
+  color: #475569;
+  font-weight: 500;
+}
+
+.hero-light-statement {
+  font-family: var(--font-body);
+  font-size: clamp(1.0625rem, 1.2vw, 1.1875rem);
+  line-height: 1.7;
+  color: #334155;
+  max-width: 600px;
+  margin-bottom: var(--space-6);
+}
+
+.hero-light-statement strong {
+  color: #0A2858;
+  font-weight: 700;
+}
+
+.hero-light-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  align-items: center;
+  margin-bottom: var(--space-8);
+}
+
+.hero-light-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  border-top: 1px solid #E2E8F0;
+  padding-top: var(--space-5);
+}
+
+@media (max-width: 640px) {
+  .hero-light-highlights {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+}
+
+.hero-light-highlight-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.hero-light-highlight-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.hero-light-highlight-item strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  color: #0A2858;
+  font-weight: 700;
+}
+
+.hero-light-highlight-item span {
+  display: block;
+  font-size: 0.75rem;
+  color: #64748B;
+}
+
+.hero-light-section__bottom-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, rgba(24, 94, 200, 0.15));
+  pointer-events: none;
+}
+
 
 
