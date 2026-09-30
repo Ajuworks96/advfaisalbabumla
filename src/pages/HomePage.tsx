@@ -34,7 +34,7 @@ export const HomePage: React.FC = () => {
         'The MLA Asset Development Scheme prioritizes high-impact community assets including school laboratory blocks, public drinking water supply augmentation, community health centre facilities, rural link roads, and public library modernizations.',
     },
     {
-      question: 'When can constituents meet Adv. Faisal Babu MLA in person?',
+      question: 'When can constituents meet Adv. Fysal Babu MLA in person?',
       answer:
         'Constituents can meet the MLA at the Constituency Headquarters on Mondays, Wednesdays, and Saturdays between 09:30 AM – 01:30 PM. On Fridays, open Janamaithri Adalats are conducted across various panchayaths for on-the-spot grievance redressing.',
     },
@@ -49,7 +49,7 @@ export const HomePage: React.FC = () => {
     <div className="page-canvas-fluid">
       {/* ====================================================================
           1. HERO SECTION (Off-White with Minimal Blue & Calicut South Elements)
-          Left: Sri Faisal Babu MLA Full-Height Portrait (Integrated into Background)
+          Left: Sri Fysal Babu MLA Full-Height Portrait (Integrated into Background)
           Right: Editorial Leadership Typography, Malayalam Lead & Direct CTAs
           ==================================================================== */}
       <section className="hero-light-section">
@@ -59,13 +59,13 @@ export const HomePage: React.FC = () => {
 
         <Container>
           <div className="hero-light-grid">
-            {/* Left Column: Sri Faisal Babu MLA Official HD Cutout Portrait */}
+            {/* Left Column: Sri Fysal Babu MLA Official HD Cutout Portrait */}
             <div className="hero-light-leader">
               <div className="hero-light-leader__halo" />
               <div className="hero-light-leader__portrait-wrapper">
                 <img
-                  src="/images/faisal-babu-mla-hd.png"
-                  alt="Adv. Faisal Babu MLA - Member of Legislative Assembly, Kozhikode South"
+                  src="/images/fysal-babu-mla-hd.png"
+                  alt="Adv. Fysal Babu MLA - Member of Legislative Assembly, Kozhikode South"
                   className="hero-light-leader__img"
                   width={480}
                   height={540}
@@ -74,7 +74,7 @@ export const HomePage: React.FC = () => {
               </div>
               <div className="hero-light-leader__tag">
                 <span className="hero-light-leader__tag-dot" />
-                <span>Adv. Faisal Babu MLA • 16th KLA (കോഴിക്കോട് സൗത്ത്)</span>
+                <span>Adv. Fysal Babu MLA • 16th KLA (കോഴിക്കോട് സൗത്ത്)</span>
               </div>
             </div>
 
@@ -98,7 +98,7 @@ export const HomePage: React.FC = () => {
 
               {/* Grand Headline */}
               <h1 className="hero-light-title">
-                Adv. Faisal Babu <span className="hero-light-title__mla">MLA</span>
+                Adv. Fysal Babu <span className="hero-light-title__mla">MLA</span>
               </h1>
 
               {/* Bilingual Subtitle */}
@@ -258,7 +258,7 @@ export const HomePage: React.FC = () => {
 
                 <div className="manifesto-doc__meta">
                   <div>
-                    <strong style={{ color: '#0F172A', display: 'block', fontSize: '0.9375rem' }}>Adv. Faisal Babu MLA</strong>
+                    <strong style={{ color: '#0F172A', display: 'block', fontSize: '0.9375rem' }}>Adv. Fysal Babu MLA</strong>
                     <span>Member, Kerala Legislative Assembly</span>
                   </div>
                   <div style={{ textAlign: 'right', fontWeight: 800, color: '#0D3E84', fontSize: '0.875rem' }}>
@@ -292,7 +292,7 @@ export const HomePage: React.FC = () => {
                   marginBottom: 'var(--space-5)',
                 }}
               >
-                Combining deep legal advocacy with grassroots community leadership, Adv. Faisal Babu
+                Combining deep legal advocacy with grassroots community leadership, Adv. Fysal Babu
                 bridges everyday citizen challenges with state-level administrative action. Every bill,
                 motion, and submission on the floor of the Kerala Niyamasabha directly champions the
                 welfare and progressive future of the constituency.
@@ -723,7 +723,7 @@ export const HomePage: React.FC = () => {
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', fontSize: 'var(--text-sm)', color: '#FFFFFF' }}>
                     <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: 'var(--color-accent-green)', boxShadow: '0 0 8px var(--color-accent-green)' }} />
-                    <span>Direct personal review by Adv. Faisal Babu MLA</span>
+                    <span>Direct personal review by Adv. Fysal Babu MLA</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', fontSize: 'var(--text-sm)', color: '#FFFFFF' }}>
                     <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: 'var(--color-accent-green)', boxShadow: '0 0 8px var(--color-accent-green)' }} />
@@ -811,7 +811,7 @@ export const HomePage: React.FC = () => {
                   marginBottom: 'var(--space-6)',
                 }}
               >
-                Adv. Faisal Babu actively participates in statutory law-making, budgetary scrutiny,
+                Adv. Fysal Babu actively participates in statutory law-making, budgetary scrutiny,
                 and ministerial accountability on the floor of the house in Thiruvananthapuram.
               </p>
 
@@ -1196,7 +1196,7 @@ export const HomePage: React.FC = () => {
                   <div>
                     <strong style={{ color: '#FFFFFF' }}>Address:</strong>
                     <br />
-                    Office of Adv. Faisal Babu MLA
+                    Office of Adv. Fysal Babu MLA
                     <br />
                     Civil Station Road, Constituency Headquarters
                     <br />
@@ -1222,10 +1222,10 @@ export const HomePage: React.FC = () => {
                   <div>
                     <strong style={{ color: '#FFFFFF' }}>Email:</strong>{' '}
                     <a
-                      href="mailto:office@advfaisalbabu.in"
+                      href="mailto:office@advfysalbabu.in"
                       style={{ color: 'var(--color-accent-yellow)', fontWeight: 700, textDecoration: 'underline' }}
                     >
-                      office@advfaisalbabu.in
+                      office@advfysalbabu.in
                     </a>
                   </div>
                 </div>

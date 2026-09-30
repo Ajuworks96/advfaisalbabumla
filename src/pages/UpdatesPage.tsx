@@ -16,7 +16,7 @@ export const UpdatesPage: React.FC = () => {
         <SectionHeader
           eyebrow="Official Dispatches & Media Room"
           title="Press Statements & Official Updates"
-          description="Authoritative announcements, press releases, policy stances, and official commentary from the office of Adv. Faisal Babu MLA."
+          description="Authoritative announcements, press releases, policy stances, and official commentary from the office of Adv. Fysal Babu MLA."
         />
 
         <Divider />

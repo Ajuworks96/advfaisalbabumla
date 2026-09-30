@@ -1,6 +1,6 @@
-# Adv. Faisal Babu MLA — Official Public Office & Constituency Portal
+# Adv. Fysal Babu MLA — Official Public Office & Constituency Portal
 
-A state-of-the-art, high-performance public office website and citizen portal built for **Adv. Faisal Babu MLA** (Member of the Legislative Assembly, Kerala).
+A state-of-the-art, high-performance public office website and citizen portal built for **Adv. Fysal Babu MLA** (Member of the Legislative Assembly, Kerala).
 
 Designed with a modern, lightweight, high-trust visual language inspired by the vibrant royal/cobalt blue gradients of *Future Calicut 360*, featuring frosted glassmorphism surfaces, crisp bilingual typography (English & Malayalam), photorealistic civic assets, and an interactive Citizen Grievance Portal.
 
@@ -111,5 +111,5 @@ advfaisalbabumla/
 
 ## 📄 License & Attribution
 
-Designed and developed for the official public office of Adv. Faisal Babu MLA.  
-© 2026 Office of Adv. Faisal Babu MLA. All rights reserved.
+Designed and developed for the official public office of Adv. Fysal Babu MLA.  
+© 2026 Office of Adv. Fysal Babu MLA. All rights reserved.

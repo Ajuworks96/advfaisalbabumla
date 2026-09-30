@@ -38,7 +38,7 @@ const MOBILE_NAV_LINKS = [
 
 /**
  * Sophisticated Institutional Header & Navigation System
- * Designed for the official public office of Adv. Faisal Babu MLA.
+ * Designed for the official public office of Adv. Fysal Babu MLA.
  * Features calm editorial typography, generous spacing, accessible modal navigation,
  * and restrained scroll elevation.
  */
@@ -179,9 +179,9 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
           <Link
             to="/"
             className="brand"
-            aria-label="Adv. Faisal Babu, Member of Legislative Assembly — Return to Home"
+            aria-label="Adv. Fysal Babu, Member of Legislative Assembly — Return to Home"
           >
-            <span className="brand__name">Adv. Faisal Babu</span>
+            <span className="brand__name">Adv. Fysal Babu</span>
             <span className="brand__title">Member of Legislative Assembly</span>
           </Link>
 
@@ -255,7 +255,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
               <div className="mobile-nav-drawer__header">
                 <div>
                   <div className="brand__name" style={{ fontSize: '1.125rem' }}>
-                    Adv. Faisal Babu
+                    Adv. Fysal Babu
                   </div>
                   <div className="brand__title" style={{ fontSize: '0.7rem' }}>
                     Member of Legislative Assembly

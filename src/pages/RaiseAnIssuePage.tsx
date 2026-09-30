@@ -28,7 +28,7 @@ export const RaiseAnIssuePage: React.FC = () => {
         <SectionHeader
           level="h1"
           title="Submit a Public Grievance or Petition"
-          description="Directly lodge local community issues, infrastructural concerns, or individual petitions with the office of Adv. Faisal Babu MLA. Every submission is assigned an official tracking reference."
+          description="Directly lodge local community issues, infrastructural concerns, or individual petitions with the office of Adv. Fysal Babu MLA. Every submission is assigned an official tracking reference."
         />
 
         <Divider />

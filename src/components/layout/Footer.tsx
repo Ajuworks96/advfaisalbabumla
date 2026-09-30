@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
           <div className="col-4 col-md-12">
             <div style={{ marginBottom: 'var(--space-4)' }}>
               <div style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: '1.25rem', color: '#FFFFFF', marginBottom: 'var(--space-1)' }}>
-                Adv. Faisal Babu
+                Adv. Fysal Babu
               </div>
               <div style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-sm)', color: '#CBD5E1' }}>
                 Member of the Legislative Assembly (MLA)
@@ -89,8 +89,8 @@ export const Footer: React.FC = () => {
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
                 <IconMail size={15} style={{ flexShrink: 0, color: 'var(--color-accent-green)' }} />
-                <a href="mailto:office@advfaisalbabu.in" style={{ color: '#FFFFFF' }}>
-                  office@advfaisalbabu.in
+                <a href="mailto:office@advfysalbabu.in" style={{ color: '#FFFFFF' }}>
+                  office@advfysalbabu.in
                 </a>
               </div>
             </div>
@@ -100,7 +100,7 @@ export const Footer: React.FC = () => {
         {/* Footer Hairline & Legal Credits */}
         <div className="site-footer__bottom">
           <div>
-            © {new Date().getFullYear()} Office of Adv. Faisal Babu MLA. All rights reserved.
+            © {new Date().getFullYear()} Office of Adv. Fysal Babu MLA. All rights reserved.
           </div>
           <div style={{ display: 'flex', gap: 'var(--space-4)' }}>
             <span>Government of Kerala Context</span>

@@ -41,7 +41,7 @@ export const ContactPage: React.FC = () => {
                 <IconLocation size={18} style={{ color: 'var(--color-text-primary)', marginTop: '2px', flexShrink: 0 }} />
                 <div>
                   <strong style={{ color: 'var(--color-text-primary)' }}>Address:</strong><br />
-                  Office of Adv. Faisal Babu MLA<br />
+                  Office of Adv. Fysal Babu MLA<br />
                   Civil Station Road, Constituency Headquarters<br />
                   Kerala, PIN: 676 000
                 </div>
@@ -61,8 +61,8 @@ export const ContactPage: React.FC = () => {
                 <IconMail size={18} style={{ color: 'var(--color-text-primary)', flexShrink: 0 }} />
                 <div>
                   <strong style={{ color: 'var(--color-text-primary)' }}>Official Email:</strong>{' '}
-                  <a href="mailto:office@advfaisalbabu.in" style={{ color: 'var(--color-text-primary)', textDecoration: 'underline' }}>
-                    office@advfaisalbabu.in
+                  <a href="mailto:office@advfysalbabu.in" style={{ color: 'var(--color-text-primary)', textDecoration: 'underline' }}>
+                    office@advfysalbabu.in
                   </a>
                 </div>
               </div>
