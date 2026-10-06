@@ -103,7 +103,7 @@ export const HomePage: React.FC = () => {
         <div className="hero-light-section__bg-watermark" />
         <div className="hero-light-section__ambient-glow" />
 
-        <Container>
+        <Container style={{ position: 'relative', zIndex: 3 }}>
           <div className="hero-light-grid">
             {/* Left Column: Sri Fysal Babu MLA Official HD Cutout Portrait */}
             <div className="hero-light-leader">
@@ -269,23 +269,8 @@ export const HomePage: React.FC = () => {
           </div>
         </Container>
 
-        {/* Organic Fluid Gradient Stream ("Ozhukk") into Royal Blue */}
-        <div className="hero-stream-ozhukk" aria-hidden="true">
-          <svg viewBox="0 0 1440 180" fill="none" preserveAspectRatio="none" className="hero-stream-svg">
-            <path
-              d="M0,40 C320,110 500,10 780,70 C1060,130 1220,30 1440,80 L1440,180 L0,180 Z"
-              fill="rgba(24, 94, 200, 0.35)"
-            />
-            <path
-              d="M0,80 C260,150 540,30 840,95 C1140,160 1260,60 1440,100 L1440,180 L0,180 Z"
-              fill="rgba(20, 80, 176, 0.7)"
-            />
-            <path
-              d="M0,120 C360,170 620,70 920,130 C1220,185 1320,105 1440,140 L1440,180 L0,180 Z"
-              fill="#185EC8"
-            />
-          </svg>
-        </div>
+        {/* Clean, Professional White-to-Blue Gradient Transition */}
+        <div className="hero-bottom-gradient" aria-hidden="true" />
       </section>
 
       {/* ====================================================================
