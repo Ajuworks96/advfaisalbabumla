@@ -17,7 +17,7 @@ const DESKTOP_NAV_LINKS = [
   { label: 'Updates', hash: 'updates' },
   { label: 'Events', hash: 'events' },
   { label: 'Gallery', hash: 'gallery' },
-  { label: 'Assembly', hash: 'assembly' },
+  { label: 'Assembly Work', hash: 'assembly' },
   { label: 'Contact', hash: 'contact' },
 ];
 
@@ -32,7 +32,7 @@ const MOBILE_NAV_LINKS = [
   { label: 'Latest Updates', hash: 'updates' },
   { label: 'Events & Sittings', hash: 'events' },
   { label: 'Gallery & Media', hash: 'gallery' },
-  { label: 'Assembly Record', hash: 'assembly' },
+  { label: 'Assembly Work', hash: 'assembly' },
   { label: 'Citizen Services', hash: 'citizen-services' },
   { label: 'Contact Office', hash: 'contact' },
 ];
@@ -54,22 +54,29 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
   /**
    * Smoothly scrolls to section target with header height offset
    */
-  const scrollToSection = useCallback((hash: string) => {
-    const target = document.getElementById(hash);
+  const scrollToSection = useCallback((hash: string, updateHistory = true) => {
+    const cleanHash = hash.replace(/^#/, '');
+    if (!cleanHash) return;
+
+    const target = document.getElementById(cleanHash);
     if (target) {
       const headerOffset = 76;
       const elementPosition = target.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
       window.scrollTo({
-        top: offsetPosition,
+        top: Math.max(0, offsetPosition),
         behavior: 'smooth',
       });
 
-      if (window.history.pushState) {
-        window.history.pushState(null, '', `#${hash}`);
+      if (updateHistory && window.history.pushState) {
+        window.history.pushState(null, '', `#${cleanHash}`);
       }
-      setActiveSection(hash);
+      setActiveSection(cleanHash);
+    } else {
+      if (window.location.pathname !== '/') {
+        window.location.href = `/#${cleanHash}`;
+      }
     }
   }, []);
 
@@ -91,7 +98,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 8);
 
-      const headerOffset = 140;
+      const headerOffset = 130;
       let currentSection = 'home';
 
       for (const sectionId of sections) {
@@ -106,7 +113,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
       }
 
       // If scrolled near bottom of page, highlight contact
-      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 80) {
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100) {
         currentSection = 'contact';
       }
 
@@ -121,22 +128,29 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
     };
   }, []);
 
-  // Support URL hashes on initial load & popstate
+  // Support URL hashes on initial load, popstate, & after image load
   useEffect(() => {
     const checkHashAndScroll = () => {
-      const hash = window.location.hash.replace('#', '');
+      const hash = window.location.hash.replace(/^#/, '');
       if (hash) {
+        requestAnimationFrame(() => {
+          scrollToSection(hash, false);
+        });
         setTimeout(() => {
-          scrollToSection(hash);
-        }, 120);
+          scrollToSection(hash, false);
+        }, 150);
       }
     };
 
     checkHashAndScroll();
     window.addEventListener('hashchange', checkHashAndScroll);
+    window.addEventListener('popstate', checkHashAndScroll);
+    window.addEventListener('load', checkHashAndScroll);
 
     return () => {
       window.removeEventListener('hashchange', checkHashAndScroll);
+      window.removeEventListener('popstate', checkHashAndScroll);
+      window.removeEventListener('load', checkHashAndScroll);
     };
   }, [scrollToSection]);
 
@@ -276,8 +290,11 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                   e.preventDefault();
                   scrollToSection('citizen-services');
                 }}
-                className="btn btn--primary btn--sm"
+                className={`btn btn--primary btn--sm ${
+                  activeSection === 'citizen-services' ? 'btn--active' : ''
+                }`}
                 aria-label="Raise an Issue with the MLA Office"
+                aria-current={activeSection === 'citizen-services' ? 'page' : undefined}
               >
                 Raise an Issue
               </a>

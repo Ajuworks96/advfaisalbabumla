@@ -59,6 +59,10 @@
   box-shadow: 0 4px 14px rgba(0, 208, 132, 0.35);
 }
 
+.btn--primary.btn--active {
+  box-shadow: 0 0 0 2px #FFFFFF, 0 0 14px rgba(0, 208, 132, 0.6);
+}
+
 /* Inverted White Button */
 .btn--inverted {
   background-color: #FFFFFF;

@@ -4,19 +4,26 @@ import { IconLocation, IconPhone, IconMail } from '../icons/Icons';
 
 export const Footer: React.FC = () => {
   const scrollToSection = useCallback((hash: string) => {
-    const target = document.getElementById(hash);
+    const cleanHash = hash.replace(/^#/, '');
+    if (!cleanHash) return;
+
+    const target = document.getElementById(cleanHash);
     if (target) {
       const headerOffset = 76;
       const elementPosition = target.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
       window.scrollTo({
-        top: offsetPosition,
+        top: Math.max(0, offsetPosition),
         behavior: 'smooth',
       });
 
       if (window.history.pushState) {
-        window.history.pushState(null, '', `#${hash}`);
+        window.history.pushState(null, '', `#${cleanHash}`);
+      }
+    } else {
+      if (window.location.pathname !== '/') {
+        window.location.href = `/#${cleanHash}`;
       }
     }
   }, []);
