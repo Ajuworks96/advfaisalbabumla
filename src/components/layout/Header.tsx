@@ -117,7 +117,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
         currentSection = 'contact';
       }
 
-      setActiveSection(currentSection);
+      setActiveSection((prev) => (prev === currentSection ? prev : currentSection));
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });

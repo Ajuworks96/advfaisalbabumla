@@ -91,7 +91,7 @@ export const HomePage: React.FC = () => {
   ];
 
   return (
-    <div className="page-canvas-fluid">
+    <div className="site-page-container">
       {/* ====================================================================
           1. HOME / HERO (#home)
           Off-White with Minimal Blue & Calicut South Elements
@@ -268,10 +268,19 @@ export const HomePage: React.FC = () => {
             </div>
           </div>
         </Container>
-
-        {/* Clean, Professional White-to-Blue Gradient Transition */}
-        <div className="hero-bottom-gradient" aria-hidden="true" />
       </section>
+
+      {/* Seamless Fluid Gradient Transition Flow: Pure White melting smoothly into Royal Blue (Zero Cutting) */}
+      <div className="hero-seamless-transition" aria-hidden="true" />
+
+      {/* Unified Royal Blue Canvas with Minimal Civic & Architectural Elements */}
+      <div className="page-canvas-fluid">
+        {/* Minimal Subtle Background Elements (Breaks Monotony while Preserving Blue Identity) */}
+        <div className="page-canvas-fluid__grid" aria-hidden="true" />
+        <div className="page-canvas-fluid__glow-cyan" aria-hidden="true" />
+        <div className="page-canvas-fluid__glow-green" aria-hidden="true" />
+        <div className="page-canvas-fluid__glow-gold" aria-hidden="true" />
+        <div className="page-canvas-fluid__rings" aria-hidden="true" />
 
       {/* ====================================================================
           2. ABOUT THE MLA (#about)
@@ -1722,6 +1731,7 @@ export const HomePage: React.FC = () => {
           </ResponsiveGrid>
         </Container>
       </Section>
+      </div>
     </div>
   );
 };
