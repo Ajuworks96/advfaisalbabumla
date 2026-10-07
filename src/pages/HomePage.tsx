@@ -91,37 +91,44 @@ export const HomePage: React.FC = () => {
   ];
 
   return (
-    <div className="site-page-container">
+    <div className="page-canvas-fluid">
+      {/* Minimal Subtle Background Elements (Architectural Blueprint Grid, Ambient Glows & Rings) */}
+      <div className="page-canvas-fluid__grid" aria-hidden="true" />
+      <div className="page-canvas-fluid__glow-cyan" aria-hidden="true" />
+      <div className="page-canvas-fluid__glow-green" aria-hidden="true" />
+      <div className="page-canvas-fluid__glow-gold" aria-hidden="true" />
+      <div className="page-canvas-fluid__rings" aria-hidden="true" />
+
       {/* ====================================================================
           1. HOME / HERO (#home)
-          Off-White with Minimal Blue & Calicut South Elements
-          Left: Sri Fysal Babu MLA Portrait (Integrated, Chair Removed, Hands Free)
-          Right: Editorial Leadership Typography, Malayalam Lead & Direct CTAs
+          Unified Royal Blue Leadership Showcase
+          Left: Sri Fysal Babu MLA Official Cutout Portrait with Luminous Aura
+          Right: Editorial Leadership Typography, Gold Malayalam Lead & Direct CTAs
           ==================================================================== */}
-      <section className="hero-light-section" id="home">
-        {/* Subtle Calicut South Landmark Watermark & Minimal Blue Ambient Glow */}
-        <div className="hero-light-section__bg-watermark" />
-        <div className="hero-light-section__ambient-glow" />
+      <section className="hero-royal-section" id="home">
+        {/* Subtle Watermark & Ambient Aura */}
+        <div className="hero-royal-section__bg-watermark" aria-hidden="true" />
+        <div className="hero-royal-section__ambient-glow" aria-hidden="true" />
 
         <Container style={{ position: 'relative', zIndex: 3 }}>
-          <div className="hero-light-grid">
+          <div className="hero-royal-grid">
             {/* Left Column: Sri Fysal Babu MLA Official HD Cutout Portrait */}
-            <div className="hero-light-leader">
-              <div className="hero-light-leader__halo" />
+            <div className="hero-royal-leader">
+              <div className="hero-royal-leader__halo" />
               
-              {/* Floating Leadership Credential Chip placed cleanly above portrait */}
-              <div className="hero-light-leader__badge-float">
-                <span className="hero-light-leader__badge-star">★</span>
+              {/* Floating Leadership Credential Chip */}
+              <div className="hero-royal-leader__badge-float">
+                <span className="hero-royal-leader__badge-star">★</span>
                 <span>Adv. Fysal Babu MLA</span>
-                <span className="hero-light-leader__badge-sep">•</span>
-                <span className="hero-light-leader__badge-constituency">കോഴിക്കോട് സൗത്ത്</span>
+                <span className="hero-royal-leader__badge-sep">•</span>
+                <span className="hero-royal-leader__badge-constituency">കോഴിക്കോട് സൗത്ത്</span>
               </div>
 
-              <div className="hero-light-leader__portrait-wrapper">
+              <div className="hero-royal-leader__portrait-wrapper">
                 <img
                   src="/images/fysal-babu-mla-hd.png"
                   alt="Adv. Fysal Babu MLA - Member of Legislative Assembly, Kozhikode South"
-                  className="hero-light-leader__img"
+                  className="hero-royal-leader__img"
                   width={520}
                   height={620}
                   loading="eager"
@@ -130,43 +137,43 @@ export const HomePage: React.FC = () => {
             </div>
 
             {/* Right Column: Identity, Editorial Narrative & Action Center */}
-            <div className="hero-light-content">
+            <div className="hero-royal-content">
               {/* Institutional Eyebrow Pills */}
-              <div className="hero-light-pills">
-                <span className="hero-light-pill hero-light-pill--assembly">
-                  <span className="hero-light-pill__dot" />
+              <div className="hero-royal-pills">
+                <span className="hero-royal-pill hero-royal-pill--assembly">
+                  <span className="hero-royal-pill__dot" />
                   16th Kerala Legislative Assembly
                 </span>
-                <span className="hero-light-pill hero-light-pill--constituency">
+                <span className="hero-royal-pill hero-royal-pill--constituency">
                   Kozhikode South • കോഴിക്കോട് സൗത്ത്
                 </span>
               </div>
 
               {/* Malayalam Poster Lead */}
-              <div className="hero-light-malayalam-lead">
+              <div className="hero-royal-malayalam-lead">
                 ജനനായകൻ • കോഴിക്കോട് സൗത്തിന്റെ ശബ്ദം
               </div>
 
               {/* Grand Headline */}
-              <h1 className="hero-light-title">
-                Adv. Fysal Babu <span className="hero-light-title__mla">MLA</span>
+              <h1 className="hero-royal-title">
+                Adv. Fysal Babu <span className="hero-royal-title__mla">MLA</span>
               </h1>
 
               {/* Bilingual Subtitle */}
-              <div className="hero-light-subtitle">
+              <div className="hero-royal-subtitle">
                 <span>Member of the Legislative Assembly</span>
-                <span className="hero-light-subtitle__sep">|</span>
-                <span className="hero-light-subtitle__mal">കേരള നിയമസഭാ സാമാജികൻ</span>
+                <span className="hero-royal-subtitle__sep">|</span>
+                <span className="hero-royal-subtitle__mal">കേരള നിയമസഭാ സാമാജികൻ</span>
               </div>
 
               {/* Vision Statement */}
-              <p className="hero-light-statement">
+              <p className="hero-royal-statement">
                 A proactive <strong>360° Vision</strong> driving modern public healthcare, high-tech government schools,
                 sustainable coastal infrastructure, and transparent democratic governance for every family in Kozhikode South.
               </p>
 
               {/* Primary Action Buttons */}
-              <div className="hero-light-actions">
+              <div className="hero-royal-actions">
                 <a
                   href="#citizen-services"
                   onClick={(e) => {
@@ -176,9 +183,9 @@ export const HomePage: React.FC = () => {
                   className="btn btn--primary btn--lg"
                   style={{
                     backgroundColor: '#059669',
-                    borderColor: '#059669',
+                    borderColor: '#10B981',
                     color: '#FFFFFF',
-                    boxShadow: '0 8px 24px rgba(5, 150, 105, 0.3)',
+                    boxShadow: '0 8px 24px rgba(5, 150, 105, 0.4)',
                   }}
                 >
                   <span>Raise a Citizen Grievance</span>
@@ -190,36 +197,30 @@ export const HomePage: React.FC = () => {
                     e.preventDefault();
                     scrollToSection('development');
                   }}
-                  className="btn btn--secondary btn--lg"
-                  style={{
-                    backgroundColor: '#FFFFFF',
-                    color: '#0A2858',
-                    borderColor: '#CBD5E1',
-                    boxShadow: '0 4px 14px rgba(10, 42, 102, 0.08)',
-                  }}
+                  className="btn btn--secondary btn--lg hero-royal-btn--secondary"
                 >
                   Explore Priority Works
                 </a>
               </div>
 
               {/* Quick Highlights Bar */}
-              <div className="hero-light-highlights">
-                <div className="hero-light-highlight-item">
-                  <span className="hero-light-highlight-icon">🏛️</span>
+              <div className="hero-royal-highlights">
+                <div className="hero-royal-highlight-item">
+                  <span className="hero-royal-highlight-icon">🏛️</span>
                   <div>
                     <strong>Kozhikode South</strong>
                     <span>Constituency Office</span>
                   </div>
                 </div>
-                <div className="hero-light-highlight-item">
-                  <span className="hero-light-highlight-icon">⚖️</span>
+                <div className="hero-royal-highlight-item">
+                  <span className="hero-royal-highlight-icon">⚖️</span>
                   <div>
                     <strong>Advocate & Legislator</strong>
                     <span>Legal Advocacy</span>
                   </div>
                 </div>
-                <div className="hero-light-highlight-item">
-                  <span className="hero-light-highlight-icon">🤝</span>
+                <div className="hero-royal-highlight-item">
+                  <span className="hero-royal-highlight-icon">🤝</span>
                   <div>
                     <strong>Janamaithri</strong>
                     <span>Citizen Adalat</span>
@@ -229,8 +230,8 @@ export const HomePage: React.FC = () => {
             </div>
           </div>
 
-          {/* Metrics & Impact Bar (Refined Light Aesthetic bridging smoothly into the Blue Canvas) */}
-          <div className="metrics-strip metrics-strip--light">
+          {/* Metrics & Impact Bar (Luminous Frosted Glass Floating Presentation) */}
+          <div className="metrics-strip metrics-strip--glass">
             <div className="metric-stat">
               <div className="metric-stat__num">
                 ₹240 <span>Cr+</span>
@@ -269,18 +270,6 @@ export const HomePage: React.FC = () => {
           </div>
         </Container>
       </section>
-
-      {/* Seamless Fluid Gradient Transition Flow: Pure White melting smoothly into Royal Blue (Zero Cutting) */}
-      <div className="hero-seamless-transition" aria-hidden="true" />
-
-      {/* Unified Royal Blue Canvas with Minimal Civic & Architectural Elements */}
-      <div className="page-canvas-fluid">
-        {/* Minimal Subtle Background Elements (Breaks Monotony while Preserving Blue Identity) */}
-        <div className="page-canvas-fluid__grid" aria-hidden="true" />
-        <div className="page-canvas-fluid__glow-cyan" aria-hidden="true" />
-        <div className="page-canvas-fluid__glow-green" aria-hidden="true" />
-        <div className="page-canvas-fluid__glow-gold" aria-hidden="true" />
-        <div className="page-canvas-fluid__rings" aria-hidden="true" />
 
       {/* ====================================================================
           2. ABOUT THE MLA (#about)
@@ -1731,7 +1720,6 @@ export const HomePage: React.FC = () => {
           </ResponsiveGrid>
         </Container>
       </Section>
-      </div>
     </div>
   );
 };

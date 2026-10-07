@@ -924,6 +924,30 @@
   color: #475569;
 }
 
+/* Frosted glass variant for Unified Royal Blue canvas */
+.metrics-strip--glass {
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35), 0 0 30px rgba(56, 189, 248, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  position: relative;
+  z-index: 4;
+}
+
+.metrics-strip--glass .metric-stat__num {
+  color: #FFFFFF;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.metrics-strip--glass .metric-stat__num span {
+  color: #34D399;
+}
+
+.metrics-strip--glass .metric-stat__label {
+  color: #E2E8F0;
+}
+
 /* Sector Focus Cards */
 .sector-card {
   background: rgba(255, 255, 255, 0.1);
@@ -1482,20 +1506,21 @@
 }
 
 /* ==========================================================================
-   OFF-WHITE HERO SECTION WITH FLUID "OZHUKK" STREAM INTO ROYAL BLUE
-   - Leader Portrait: Full-height, bold, chair removed, unobstructed hands
-   - Seamless streaming gradient flow melting from warm off-white into royal blue
+   UNIFIED ROYAL BLUE HERO SECTION (Adv. Fysal Babu MLA Official Portal)
+   - Seamlessly integrated with the Royal Blue Civic Canvas
+   - Leader Portrait: HD organic cutout with golden/cyan luminous halo
+   - High-contrast statesmanship typography, emerald action buttons & glass badges
    ========================================================================== */
-.hero-light-section {
+.hero-royal-section {
   position: relative;
-  background-color: #FFFFFF;
-  color: #0F172A;
+  background: transparent;
+  color: #FFFFFF;
   padding-top: var(--space-8);
-  padding-bottom: var(--space-10);
+  padding-bottom: clamp(3.5rem, 6vw, 5rem);
   overflow: hidden;
 }
 
-.hero-light-section__bg-watermark {
+.hero-royal-section__bg-watermark {
   position: absolute;
   top: 0;
   left: 0;
@@ -1504,24 +1529,24 @@
   background-image: url('/images/hero-bg.jpg');
   background-size: cover;
   background-position: center bottom;
-  opacity: 0.055;
-  filter: grayscale(100%) contrast(120%);
-  mix-blend-mode: multiply;
+  opacity: 0.08;
+  filter: grayscale(100%) contrast(140%);
+  mix-blend-mode: overlay;
   pointer-events: none;
 }
 
-.hero-light-section__ambient-glow {
+.hero-royal-section__ambient-glow {
   position: absolute;
-  top: -100px;
-  right: 5%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.16) 0%, rgba(13, 62, 142, 0.05) 50%, transparent 70%);
-  filter: blur(80px);
+  top: -80px;
+  right: 8%;
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.22) 0%, rgba(13, 62, 142, 0.08) 50%, transparent 70%);
+  filter: blur(85px);
   pointer-events: none;
 }
 
-.hero-light-grid {
+.hero-royal-grid {
   display: grid;
   grid-template-columns: 46% 54%;
   align-items: flex-end;
@@ -1531,15 +1556,15 @@
 }
 
 @media (max-width: 1024px) {
-  .hero-light-grid {
+  .hero-royal-grid {
     grid-template-columns: 1fr;
     gap: var(--space-8);
     align-items: center;
   }
 }
 
-/* Left: Leader Portrait (Full organic cutout presentation) */
-.hero-light-leader {
+/* Left: Leader Portrait (Sri Adv. Fysal Babu MLA) */
+.hero-royal-leader {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -1548,55 +1573,57 @@
   width: 100%;
 }
 
-.hero-light-leader__halo {
+.hero-royal-leader__halo {
   position: absolute;
-  bottom: 12%;
+  bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
-  width: 520px;
-  height: 520px;
+  width: 540px;
+  height: 540px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(250, 204, 21, 0.22) 0%, rgba(56, 189, 248, 0.22) 40%, rgba(13, 62, 142, 0.06) 65%, transparent 75%);
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.3) 0%, rgba(245, 158, 11, 0.16) 38%, rgba(13, 62, 142, 0.06) 65%, transparent 75%);
   filter: blur(55px);
   pointer-events: none;
   z-index: 0;
 }
 
-/* Floating Clean Leadership Chip (Unobstructed, positioned cleanly above) */
-.hero-light-leader__badge-float {
+/* Floating Clean Leadership Chip */
+.hero-royal-leader__badge-float {
   position: relative;
   z-index: 3;
   margin-bottom: var(--space-3);
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid #CBD5E1;
+  background: rgba(10, 38, 90, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.24);
   border-radius: var(--radius-full);
-  padding: 6px 16px;
-  box-shadow: 0 10px 25px rgba(10, 42, 102, 0.12);
+  padding: 6px 18px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   display: inline-flex;
   align-items: center;
   gap: 8px;
   font-family: var(--font-heading);
   font-size: 0.8125rem;
   font-weight: 700;
-  color: #0A2858;
+  color: #FFFFFF;
 }
 
-.hero-light-leader__badge-star {
+.hero-royal-leader__badge-star {
   color: #FACC15;
   font-size: 0.9375rem;
 }
 
-.hero-light-leader__badge-sep {
-  color: #94A3B8;
+.hero-royal-leader__badge-sep {
+  color: rgba(255, 255, 255, 0.4);
   font-size: 0.75rem;
 }
 
-.hero-light-leader__badge-constituency {
-  color: #059669;
+.hero-royal-leader__badge-constituency {
+  color: #34D399;
   font-weight: 600;
 }
 
-.hero-light-leader__portrait-wrapper {
+.hero-royal-leader__portrait-wrapper {
   position: relative;
   z-index: 1;
   width: 100%;
@@ -1606,40 +1633,40 @@
   align-items: flex-end;
 }
 
-.hero-light-leader__img {
+.hero-royal-leader__img {
   width: 100%;
   height: auto;
   max-height: 640px;
   object-fit: contain;
-  filter: drop-shadow(0 25px 45px rgba(10, 40, 90, 0.25));
+  filter: drop-shadow(0 25px 45px rgba(3, 14, 40, 0.6));
   -webkit-mask-image: linear-gradient(to top, transparent 0%, black 8%, black 100%);
   mask-image: linear-gradient(to top, transparent 0%, black 8%, black 100%);
   transition: transform var(--transition-base);
 }
 
-.hero-light-leader:hover .hero-light-leader__img {
+.hero-royal-leader:hover .hero-royal-leader__img {
   transform: scale(1.015);
 }
 
 /* Right: Content */
-.hero-light-content {
+.hero-royal-content {
   position: relative;
   z-index: 1;
   padding-bottom: var(--space-4);
 }
 
-.hero-light-pills {
+.hero-royal-pills {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
   margin-bottom: var(--space-3);
 }
 
-.hero-light-pill {
+.hero-royal-pill {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 5px 12px;
+  padding: 5px 14px;
   border-radius: var(--radius-full);
   font-family: var(--font-heading);
   font-size: 0.75rem;
@@ -1648,52 +1675,56 @@
   text-transform: uppercase;
 }
 
-.hero-light-pill--assembly {
-  background-color: #EBF3FE;
-  color: #0D3E8E;
-  border: 1px solid #BFDBFE;
+.hero-royal-pill--assembly {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(10px);
 }
 
-.hero-light-pill__dot {
+.hero-royal-pill__dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: #059669;
-  box-shadow: 0 0 6px #059669;
+  background-color: #10B981;
+  box-shadow: 0 0 8px #10B981;
 }
 
-.hero-light-pill--constituency {
-  background-color: #FEF9C3;
-  color: #854D0E;
-  border: 1px solid #FDE047;
+.hero-royal-pill--constituency {
+  background-color: rgba(245, 158, 11, 0.18);
+  color: #FDE68A;
+  border: 1px solid rgba(245, 158, 11, 0.38);
+  backdrop-filter: blur(10px);
 }
 
-.hero-light-malayalam-lead {
+.hero-royal-malayalam-lead {
   font-family: var(--font-heading);
   font-size: 1.125rem;
   font-weight: 800;
-  color: #059669;
+  color: #FCD34D;
   margin-bottom: var(--space-2);
   letter-spacing: 0.02em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-.hero-light-title {
+.hero-royal-title {
   font-family: var(--font-heading);
   font-size: clamp(2.75rem, 4.8vw, 4.25rem);
   line-height: 1.05;
-  color: #0A2858;
+  color: #FFFFFF;
   font-weight: 800;
   margin-bottom: var(--space-3);
   letter-spacing: -0.025em;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
-.hero-light-title__mla {
-  color: #1350B4;
+.hero-royal-title__mla {
+  color: #38BDF8;
   position: relative;
   display: inline-block;
 }
 
-.hero-light-title__mla::after {
+.hero-royal-title__mla::after {
   content: '';
   position: absolute;
   bottom: 4px;
@@ -1704,7 +1735,7 @@
   border-radius: 2px;
 }
 
-.hero-light-subtitle {
+.hero-royal-subtitle {
   display: flex;
   align-items: center;
   gap: var(--space-2);
@@ -1712,34 +1743,35 @@
   font-family: var(--font-heading);
   font-size: 1.125rem;
   font-weight: 600;
-  color: #1E293B;
+  color: #E2E8F0;
   margin-bottom: var(--space-5);
 }
 
-.hero-light-subtitle__sep {
-  color: #94A3B8;
+.hero-royal-subtitle__sep {
+  color: rgba(255, 255, 255, 0.4);
 }
 
-.hero-light-subtitle__mal {
-  color: #475569;
+.hero-royal-subtitle__mal {
+  color: #CBD5E1;
   font-weight: 500;
 }
 
-.hero-light-statement {
+.hero-royal-statement {
   font-family: var(--font-body);
   font-size: clamp(1.0625rem, 1.2vw, 1.1875rem);
   line-height: 1.7;
-  color: #334155;
+  color: #E2E8F0;
   max-width: 600px;
   margin-bottom: var(--space-6);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
 }
 
-.hero-light-statement strong {
-  color: #0A2858;
+.hero-royal-statement strong {
+  color: #FFFFFF;
   font-weight: 700;
 }
 
-.hero-light-actions {
+.hero-royal-actions {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-4);
@@ -1747,65 +1779,64 @@
   margin-bottom: var(--space-8);
 }
 
-.hero-light-highlights {
+.hero-royal-btn--secondary {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2) !important;
+  transition: all var(--transition-fast);
+}
+
+.hero-royal-btn--secondary:hover {
+  background-color: rgba(255, 255, 255, 0.22) !important;
+  border-color: rgba(255, 255, 255, 0.55) !important;
+  transform: translateY(-2px);
+}
+
+.hero-royal-highlights {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-4);
-  border-top: 1px solid #E2E8F0;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
   padding-top: var(--space-5);
 }
 
 @media (max-width: 640px) {
-  .hero-light-highlights {
+  .hero-royal-highlights {
     grid-template-columns: 1fr;
     gap: var(--space-3);
   }
 }
 
-.hero-light-highlight-item {
+.hero-royal-highlight-item {
   display: flex;
   align-items: center;
   gap: var(--space-3);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  backdrop-filter: blur(10px);
 }
 
-.hero-light-highlight-icon {
+.hero-royal-highlight-icon {
   font-size: 1.5rem;
   line-height: 1;
 }
 
-.hero-light-highlight-item strong {
+.hero-royal-highlight-item strong {
   display: block;
   font-family: var(--font-heading);
   font-size: 0.875rem;
-  color: #0A2858;
+  color: #FFFFFF;
   font-weight: 700;
 }
 
-.hero-light-highlight-item span {
+.hero-royal-highlight-item span {
   display: block;
   font-size: 0.75rem;
-  color: #64748B;
-}
-
-/* Seamless, Butter-Smooth White-to-Blue Linear Gradient Flow (Zero Cutting, High-Fidelity Ease) */
-.hero-seamless-transition {
-  width: 100%;
-  height: clamp(160px, 18vw, 240px);
-  background: linear-gradient(
-    180deg,
-    #FFFFFF 0%,
-    #F7FAFE 16%,
-    #E8F2FD 32%,
-    #C8E1FA 50%,
-    #93C1F6 68%,
-    #458AE8 84%,
-    #185EC8 100%
-  );
-  margin-top: -1px;
-  margin-bottom: -1px;
-  position: relative;
-  z-index: 2;
-  pointer-events: none;
+  color: #CBD5E1;
 }
 
 
